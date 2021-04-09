@@ -2,7 +2,7 @@ import firebase from firebase/app
 import "firebase/auth";
 import "firebase/firestore"
 
-var firebaseConfig = {
+var app = {
     apiKey: process.env.REVITALIZE_API,
     authDomain: process.env.REVITALIZE_AUTH,
     projectId: process.env.REVITALIZE_PROJECT,
@@ -12,4 +12,7 @@ var firebaseConfig = {
     measurementId: process.env.REVITALIZE_MEASUREMENT
   };
   
-  firebase.initializeApp(firebaseConfig);
+  firebase.initializeApp(app);
+
+ 
+  export default app
