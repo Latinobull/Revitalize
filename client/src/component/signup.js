@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { useAuth } from '../Authenticate/AuthContext';
 export default function Signup() {
   return (
     <div>
