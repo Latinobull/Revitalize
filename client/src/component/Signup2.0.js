@@ -4,7 +4,7 @@ export default function Signup() {
   const emailRef = useRef();
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
-  const { signup } = useAuth();
+  const { Signup, currentUser } = useAuth();
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
@@ -18,15 +18,16 @@ export default function Signup() {
     try {
       setError('');
       setLoading(true);
-      await signup(emailRef.current.value, passwordRef.current.value);
+      await Signup(emailRef.current.value, passwordRef.current.value);
     } catch {
       setError('Failed to set up Account. Please Try Again');
-      setLoading(false);
     }
+    setLoading(false);
   }
 
   return (
     <div>
+      {currentUser && currentUser.email}
       <form onSubmit={handleSubmit}>
         <h1>Signup</h1>
         <label>
