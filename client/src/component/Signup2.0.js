@@ -1,24 +1,41 @@
 import React, { useRef, useState } from 'react';
 import { useAuth } from '../Authenticate/AuthContext';
 export default function Signup() {
-  const { Signup } = useAuth;
+  const { Signup, currentUser } = useAuth;
   const emailRef = useRef();
-  const PasswordRef = useRef();
-  const PasswordConfirmRef = useRef();
+  const passwordRef = useRef();
+  const passwordConfirmRef = useRef();
   const [error, setError] = useState('');
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
-    Signup(emailRef.current.value, PasswordRef.current.value);
+
+    if (passwordRef.current.value !== passwordConfirmRef.current.value) {
+      return setError('The Passswords Do Not Match. Please Try Again');
+    }
+
+    try {
+      setError('');
+      await Signup(emailRef.current.value, passwordRef.current.value);
+    } catch {
+      setError('Failed to set up Account. Please Try Again');
+    }
   }
 
   return (
     <div>
-      <form>
+      {currentUser && currentUser.email}
+      <form onSubmit={handleSubmit}>
         <h1>Signup</h1>
         <label>
           Email:
-          <input type="Email" name="Email" placeholder="Email" ref={emailRef} />
+          <input
+            type="Email"
+            name="Email"
+            placeholder="Email"
+            ref={emailRef}
+            required
+          />
         </label>
         <label>
           Password
@@ -26,20 +43,23 @@ export default function Signup() {
             type="Password"
             name="Password"
             placeholder="Password"
-            ref={PasswordRef}
+            ref={passwordRef}
+            required
           />
         </label>
         <label>
           Password Confirmation
           <input
             type="Password"
-            name="Password"
+            name="PasswordConfirm"
             placeholder="Password"
-            ref={PasswordConfirmRef}
+            ref={passwordConfirmRef}
+            required
           />
         </label>
         <button type="submit">Sign Up</button>
       </form>
+      {error && <h4>{error}</h4>}
     </div>
   );
 }
