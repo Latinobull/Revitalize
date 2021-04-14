@@ -13,6 +13,7 @@ export function AuthProvider({ children }) {
   function Signup(email, password) {
     return auth.createUserWithEmailAandPassword(email, password);
   }
+
   useEffect(() => {
     const userSet = auth.onAuthStateChanged(user => {
       setCurrentUser(user);
