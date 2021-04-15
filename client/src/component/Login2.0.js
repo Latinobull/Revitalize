@@ -4,7 +4,7 @@ import { useAuth } from '../Authenticate/AuthContext';
 export default function Login() {
   const emailRef = useRef();
   const passwordRef = useRef();
-  const { Signup, currentUser } = useAuth();
+  const { Login, currentUser } = useAuth();
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
@@ -14,9 +14,9 @@ export default function Login() {
     try {
       setError('');
       setLoading(true);
-      await Signup(emailRef.current.value, passwordRef.current.value);
+      await Login(emailRef.current.value, passwordRef.current.value);
     } catch {
-      setError('Failed to set up Account. Please Try Again');
+      setError('Failed to log in. Please Try Again');
     }
     setLoading(false);
   }
