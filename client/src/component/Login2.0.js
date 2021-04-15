@@ -1,28 +1,31 @@
 import React, { useRef, useState } from 'react';
+import { Link, useHistory } from 'react-router-dom';
 import { useAuth } from '../Authenticate/AuthContext';
 export default function Login() {
   const emailRef = useRef();
   const passwordRef = useRef();
-  const { Signup, currentUser } = useAuth();
+  const { Login, currentUser } = useAuth();
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
-
+  const history = useHistory();
   async function handleSubmit(e) {
     e.preventDefault();
 
     try {
       setError('');
       setLoading(true);
-      await Signup(emailRef.current.value, passwordRef.current.value);
+      await Login(emailRef.current.value, passwordRef.current.value);
+      history.push('/');
     } catch {
-      setError('Failed to set up Account. Please Try Again');
+      setError('Failed to log in. Please Try Again');
     }
     setLoading(false);
   }
 
   return (
     <div>
-      {currentUser && currentUser.email}
+      {console.log(currentUser)}
+      {/* How to pull out current User {currentUser && currentUser.email} */}
       <form onSubmit={handleSubmit}>
         <h1>Login</h1>
         <label>
@@ -49,6 +52,10 @@ export default function Login() {
           Log In
         </button>
       </form>
+      <div>
+        Need to create an account? <Link to="/signup">Sign Up</Link>
+      </div>
+
       {error && <h4>{error}</h4>}
     </div>
   );
