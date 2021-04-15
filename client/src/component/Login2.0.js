@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useAuth } from '../Authenticate/AuthContext';
 export default function Login() {
   const emailRef = useRef();
@@ -22,7 +23,8 @@ export default function Login() {
 
   return (
     <div>
-      {currentUser && currentUser.email}
+      {console.log(currentUser)}
+      {/* How to pull out current User {currentUser && currentUser.email} */}
       <form onSubmit={handleSubmit}>
         <h1>Login</h1>
         <label>
@@ -49,6 +51,10 @@ export default function Login() {
           Log In
         </button>
       </form>
+      <div>
+        Need to create an account? <Link to="/signup">Sign Up</Link>
+      </div>
+
       {error && <h4>{error}</h4>}
     </div>
   );

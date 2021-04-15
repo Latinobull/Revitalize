@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { useAuth } from '../Authenticate/AuthContext';
+import { Link } from 'react-router-dom';
 export default function Signup() {
   const emailRef = useRef();
   const passwordRef = useRef();
@@ -27,7 +28,8 @@ export default function Signup() {
 
   return (
     <div>
-      {currentUser && currentUser.email}
+      {console.log(currentUser)}
+      {/* {currentUser && currentUser.email} */}
       <form onSubmit={handleSubmit}>
         <h1>Signup</h1>
         <label>
@@ -64,6 +66,9 @@ export default function Signup() {
           Sign Up
         </button>
       </form>
+      <div>
+        Already have an Account? <Link to="/login">Login</Link>
+      </div>
       {error && <h4>{error}</h4>}
     </div>
   );
