@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { useAuth } from '../Authenticate/AuthContext';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 export default function Signup() {
   const emailRef = useRef();
   const passwordRef = useRef();
@@ -8,6 +8,7 @@ export default function Signup() {
   const { Signup, currentUser } = useAuth();
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+  const history = useHistory();
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -20,6 +21,7 @@ export default function Signup() {
       setError('');
       setLoading(true);
       await Signup(emailRef.current.value, passwordRef.current.value);
+      history.push('/');
     } catch {
       setError('Failed to set up Account. Please Try Again');
     }
