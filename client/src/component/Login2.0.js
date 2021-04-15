@@ -1,19 +1,14 @@
 import React, { useRef, useState } from 'react';
 import { useAuth } from '../Authenticate/AuthContext';
-export default function Signup() {
+export default function Login() {
   const emailRef = useRef();
   const passwordRef = useRef();
-  const passwordConfirmRef = useRef();
   const { Signup, currentUser } = useAuth();
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
   async function handleSubmit(e) {
     e.preventDefault();
-
-    if (passwordRef.current.value !== passwordConfirmRef.current.value) {
-      return setError('The Passswords Do Not Match. Please Try Again');
-    }
 
     try {
       setError('');
@@ -29,7 +24,7 @@ export default function Signup() {
     <div>
       {currentUser && currentUser.email}
       <form onSubmit={handleSubmit}>
-        <h1>Signup</h1>
+        <h1>Login</h1>
         <label>
           Email:
           <input
@@ -50,18 +45,8 @@ export default function Signup() {
             required
           />
         </label>
-        <label>
-          Password Confirmation
-          <input
-            type="Password"
-            name="PasswordConfirm"
-            placeholder="Password"
-            ref={passwordConfirmRef}
-            required
-          />
-        </label>
         <button type="submit" disabled={loading}>
-          Sign Up
+          Log In
         </button>
       </form>
       {error && <h4>{error}</h4>}
