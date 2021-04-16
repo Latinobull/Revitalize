@@ -5,7 +5,7 @@ import { AuthProvider } from './Authenticate/AuthContext';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Main_Page from './component/Main_Page';
 import Login from './component/Login2.0';
-import Searchbar from './component/Recipes/Searchbar';
+import Recipes from "./component/Recipes/Recipes"
 import PrivateRoute from './component/PrivateRoute';
 class App extends Component {
   render() {
@@ -16,7 +16,7 @@ class App extends Component {
             <PrivateRoute exact path="/" component={Main_Page} />
             <Route path="/signup" component={Signup} />
             <Route path="/login" component={Login} />
-            <Route path="/recipes" component={Searchbar} />
+            <Route path="/recipes" component={Recipes} />
           </Switch>
         </AuthProvider>
       </Router>
