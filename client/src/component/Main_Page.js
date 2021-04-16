@@ -49,7 +49,7 @@ export default function Main_Page() {
           placeholder="DisplayName"
           ref={displayNameRef}
         ></input>
-        <button type="submit">Change User</button>
+        <button type="submit">Change Display Name</button>
       </form>
       {error && <h5>{error}</h5>}
     </div>
