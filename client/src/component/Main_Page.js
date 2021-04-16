@@ -21,8 +21,8 @@ export default function Main_Page() {
   var userDisplay = JSON.stringify(currentUser.displayName);
 
   async function handleNameChange() {
-    setError('');
     try {
+      setError('');
       await currentUser.updateProfile({
         displayName: displayNameRef.current.value,
       });
@@ -35,11 +35,16 @@ export default function Main_Page() {
     <div>
       {console.log(currentUser)}
       {currentUser.displayName ? (
-        <h2>Welcome Back{userDisplay}</h2>
+        <div>
+          <h1>Revitalize</h1>
+          <h6>Welcome Back {userDisplay}</h6>
+        </div>
       ) : (
-        <h2>Welcome new User, please click here to make a new Display Name</h2>
+        <div>
+          <h1>Revitalize</h1>
+          <h6>Welcome new User, change your display name down below!</h6>
+        </div>
       )}
-      <h1>Revitalize</h1>
       <button onClick={handleLogut}>Log Out</button>
       <br />
       <form onSubmit={handleNameChange}>
