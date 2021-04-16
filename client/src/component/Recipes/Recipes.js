@@ -1,36 +1,39 @@
 import React, {useState} from "react";
 import Searchbar from "./Searchbar";
 import API from "../../api/recipes";
+import "./style.css"
 
-function Recipes(props) {
+function Recipes() {
     const [query, setQuery] = useState("");
     const [recipes, setRecipes] = useState([]);
+
   
     const handleSubmit = () => {
-    API.recipeInfo(query).then((result) => {
-        console.log(result);
+    API.getRecipeInfo(query).then((results) => {
+        setRecipes(results.data.hits);
       });
     };
 
-    const handleTyping = (e) => {
+    const handleTyping =  function handleTyping(e) {
       setQuery(e.target.value);
     };
 
-    const handleSave = (recipeInfo) => {
-      API.saveRecipe(recipeInfo);
-    };
+    // const handleSave = (recipeInfo) => {
+    //   API.saveRecipe(recipeInfo);
+    // };
 
     return (
       <div>
-        <Searchbar handleSubmit={handleSubmit} handleTyping={handleTyping} />
+        <Searchbar handleSubmit={handleSubmit} handleTyping= {handleTyping}/>
         {recipes.map((recipe) =>{
+          console.log(recipe)
+        const randomNumber = Math.floor(Math.random() * 100) + 1
         return(
-          <div className=""> </div>
-        )  
-        })}
-      </div>
-    );
-  }
-  
+          <li key={randomNumber + Math.floor(recipe.calories)} >{recipe.recipe.label}</li>
+              );
+            })}
+          </div>
+        );
+      }
   export default Recipes;
   

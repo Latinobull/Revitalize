@@ -5,7 +5,8 @@ import { AuthProvider } from './Authenticate/AuthContext';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Main_Page from './component/Main_Page';
 import Login from './component/Login2.0';
-import Searchbar from "./component/Recipes/Searchbar"
+// import Searchbar from "./component/Recipes/Searchbar"
+import Recipes from "./component/Recipes/Recipes"
 class App extends Component {
   render() {
     return (
@@ -15,7 +16,7 @@ class App extends Component {
             <Route exact path="/" component={Main_Page} />
             <Route path="/signup" component={Signup} />
             <Route path="/login" component={Login} />
-            <Route path="/recipes" component={Searchbar} />
+            <Route path="/recipes" component={Recipes} />
           </Switch>
         </AuthProvider>
       </Router>
