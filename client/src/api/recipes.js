@@ -5,5 +5,8 @@ const url = `https://api.edamam.com/search?q=${query}&app_id=${process.env.REACT
 export default {
   getRecipeInfo: function(){
     return axios.get(url)
-  }
+  },
+  saveRecipe: function (recipeInfo) {
+    return axios.post("api/recipes", recipeInfo)
+}
 }
