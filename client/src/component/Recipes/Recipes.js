@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Searchbar from "./Searchbar";
-// import API from "../../api/recipes";
 import { v4 as uuidv4 } from "uuid";
 import RecipeReviewCard from "./RecipeCard.js";
 import axios from "axios";
