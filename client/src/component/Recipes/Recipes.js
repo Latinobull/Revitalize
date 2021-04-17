@@ -4,6 +4,7 @@ import Searchbar from "./Searchbar";
 import { v4 as uuidv4 } from "uuid";
 import RecipeReviewCard from "./RecipeCard.js";
 import axios from "axios";
+import { Grid } from "@material-ui/core";
 
 function Recipes() {
   const [query, setQuery] = useState("");
@@ -24,12 +25,18 @@ function Recipes() {
   return (
     <div>
       <Searchbar handleSubmit={handleSubmit} handleTyping={handleTyping} />
-
+      <Grid
+  container
+  direction="row"
+  justify="center"
+  alignItems="center"
+>
       {recipes.map((recipe) => {
         console.log(recipe);
         // const randomNumber = Math.floor(Math.random() * 100) + 1{randomNumber + Math.floor(recipe.calories)}
         return <RecipeReviewCard recipe={recipe} key={uuidv4()} />;
       })}
+      </Grid>
     </div>
   );
 }
