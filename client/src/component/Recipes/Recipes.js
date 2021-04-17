@@ -5,6 +5,7 @@ import RecipeReviewCard from "./RecipeCard.js";
 import axios from "axios";
 import { Grid } from "@material-ui/core";
 
+
 function Recipes() {
   const [query, setQuery] = useState("");
   const [recipes, setRecipes] = useState([]);
