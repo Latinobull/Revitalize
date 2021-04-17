@@ -1,19 +1,19 @@
-import React from 'react';
-import { StoreContext } from '../Authenticate/Firestore';
+import React, { useState } from 'react';
+import { useStore } from '../Authenticate/Firestore';
 export default function Chat() {
-  const { Test } = StoreContext();
+  //   const { Test } = useStore();
   const [error, setError] = useState();
 
   async function handleTest(e) {
     e.preventDefault();
 
-    try {
-      setError('');
-      await Test();
-      console.log('it worked');
-    } catch {
-      setError('Something went wrong');
-    }
+    // try {
+    //   setError('');
+    //   await Test();
+    //   console.log('it worked');
+    // } catch {
+    //   setError('Something went wrong');
+    // }
   }
   return (
     <form onSubmit={handleTest}>
