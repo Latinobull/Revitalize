@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import Searchbar from "./Searchbar";
 import API from "../../api/recipes";
-import "./style.css"
+
 
 function Recipes() {
     const [query, setQuery] = useState("");
