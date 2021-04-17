@@ -43,17 +43,20 @@ body{
 /*Resize the wrap to see the search bar change!*/
 .wrap{
   width: 30%;
-  position: relative;
   text-align: center;
-  transform: translate(100%, 100%);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .header {
-	font-family: "Shrikhand", serif;
 	width: 100%;
 	height: 50px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	color: #183a1d;
+  }
+
+  #healthLabel{
+    margin: 5px;
   }
