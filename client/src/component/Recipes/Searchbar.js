@@ -6,14 +6,19 @@ import "./style.css"
 function Searchbar(props) {
   return (
     <div>
-            <Header/>
-            <form className="form">
-                <input className="searchForm" onChange={props.handleTyping} placeholder="Search by Ingredient">
-                </input>
-            </form>
-            <button type="button" className="btn btn-primary searchBtn" id="searchBtn" onClick={props.handleSubmit}>Search</button>
-            </div>
+        <Header/>
+    <div className="wrap">
+   <div className="search">
+      <input type="text" className="searchTerm" onChange={props.handleTyping} placeholder="Search by Ingredient"></input>
+      <button type="submit" className="searchButton" onClick={props.handleSubmit}>
+        <i className="fa fa-search"></i>
+     </button>
+</div>
+</div>
+</div>
   );
 }
+
+
 
 export default Searchbar;

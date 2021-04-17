@@ -45,10 +45,10 @@ export default function Appbar() {
   return (
     <div className={classes.root}>
       <FormGroup>
-        <FormControlLabel
+        {/* <FormControlLabel
           control={<Switch checked={auth} onChange={handleChange} aria-label="login switch" />}
           label={auth ? 'Logout' : 'Login'}
-        />
+        /> */}
       </FormGroup>
       <AppBar position="static">
         <Toolbar>
