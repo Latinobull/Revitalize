@@ -59,5 +59,4 @@ export default function Main_Page() {
       {error && <h5>{error}</h5>}
     </div>
   );
-  console.log(process.env)
 }
