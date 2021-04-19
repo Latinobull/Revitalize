@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
+import { useAuth } from '../Authenticate/AuthContext';
 export default function Chat() {
   //   const { Test } = useStore();
   const [error, setError] = useState();
   const [messages, setMessages] = useState([]);
+  const { currentUser } = useAuth();
+  console.log(currentUser);
   const db = firebase.firestore();
   const query = db.collection('messages').orderBy('createdAt').limit(100);
   useEffect(() => {
