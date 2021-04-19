@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useStore } from '../Authenticate/Firestore';
 import firebase from 'firebase/app';
-import 'firebase/auth';
 import 'firebase/firestore';
 export default function Chat() {
   //   const { Test } = useStore();
@@ -9,7 +7,6 @@ export default function Chat() {
   const [messages, setMessages] = useState([]);
   const db = firebase.firestore();
   const query = db.collection('messages').orderBy('createdAt').limit(100);
-  useEffect(() => {});
   useEffect(() => {
     // Subscribe to query with onSnapshot
     const unsubscribe = query.onSnapshot(querySnapshot => {
