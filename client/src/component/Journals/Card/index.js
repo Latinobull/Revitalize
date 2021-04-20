@@ -9,6 +9,9 @@ import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import TextField from '@material-ui/core/TextField';
 import "./style.css";
+import Wave from "../../../images/wave.jpg"
+import Bird from "../../../images/bird.jpg"
+import Tree from "../../../images/tree.jpg"
 
 const useStyles = makeStyles({
   root: {
@@ -30,7 +33,7 @@ export default function JournalCard() {
             <CardMedia
               className={classes.media}
               component="img"
-              image="../../../../public/images/wave.jpg"
+              image={Wave}
               title="Waves"
             />
             <CardContent>
@@ -58,7 +61,7 @@ export default function JournalCard() {
             <CardMedia
               className={classes.media}
               component="img"
-              image="..\..\..\..\public\images\bird.jpg"
+              image={Bird}
               title="Humming Bird"
             />
             <CardContent>
@@ -87,7 +90,7 @@ export default function JournalCard() {
             <CardMedia
               className={classes.media}
               component="img"
-              image="../../../../public/images/tree.jpg"
+              image={Tree}
               title="Tree"
             />
             <CardContent>
