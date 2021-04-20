@@ -7,6 +7,7 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
+import TextField from '@material-ui/core/TextField';
 import "./style.css";
 
 const useStyles = makeStyles({
@@ -36,9 +37,12 @@ export default function JournalCard() {
               <Typography gutterBottom variant="h5" component="h2">
                 Feelings
               </Typography>
-              <Typography variant="body2" color="textSecondary" component="p">
-                input form here
-              </Typography>
+              <TextField
+          id="standard-multiline-flexible"
+          label="How are you feeling?"
+          multiline
+          rowsMax={12}
+        />
             </CardContent>
           </CardActionArea>
           <CardActions>
@@ -61,9 +65,12 @@ export default function JournalCard() {
               <Typography gutterBottom variant="h5" component="h2">
                 Gratitude
               </Typography>
-              <Typography variant="body2" color="textSecondary" component="p">
-                input form here
-              </Typography>
+              <TextField
+          id="standard-multiline-flexible"
+          label="What are you grateful for?"
+          multiline
+          rowsMax={4}
+        />
             </CardContent>
           </CardActionArea>
           <CardActions>
@@ -87,9 +94,12 @@ export default function JournalCard() {
               <Typography gutterBottom variant="h5" component="h2">
                 Thoughts
               </Typography>
-              <Typography variant="body2" color="textSecondary" component="p">
-                input form here
-              </Typography>
+              <TextField
+          id="standard-multiline-flexible"
+          label="What's on your mind?"
+          multiline
+          rowsMax={12}
+        />
             </CardContent>
           </CardActionArea>
           <CardActions>
