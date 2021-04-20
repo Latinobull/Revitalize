@@ -23,7 +23,10 @@ const Message = ({ createdAt, text = '', displayName = '', photoURL = '' }) => {
       <div>
         <div>
           <p>{displayName}</p>
-          <span>{formatDate(new Date(createdAt.seconds * 1000))}</span>
+
+          {createdAt && (
+            <span>{formatDate(new Date(createdAt.seconds * 1000))}</span>
+          )}
         </div>
         <p>{text}</p>
       </div>

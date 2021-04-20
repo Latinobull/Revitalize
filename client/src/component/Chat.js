@@ -8,7 +8,6 @@ export default function Chat() {
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState('');
   const inputRef = useRef();
-
   const { currentUser } = useAuth();
   const { uid, displayName, photoURL } = currentUser;
   const db = firebase.firestore();
