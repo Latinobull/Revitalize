@@ -58,7 +58,7 @@ export default function JournalCard() {
             <CardMedia
               className={classes.media}
               component="img"
-              image="../../../../public/images/bird.jpg"
+              image="..\..\..\..\public\images\bird.jpg"
               title="Humming Bird"
             />
             <CardContent>
@@ -69,7 +69,7 @@ export default function JournalCard() {
           id="standard-multiline-flexible"
           label="What are you grateful for?"
           multiline
-          rowsMax={4}
+          rowsMax={12}
         />
             </CardContent>
           </CardActionArea>
