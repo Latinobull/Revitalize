@@ -1,0 +1,10 @@
+#cardOne {
+    float: left;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  #cardTwo {
+    float: left;
+    padding-right: 50px;
+  }
