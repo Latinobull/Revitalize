@@ -6,9 +6,12 @@ export default function Chat() {
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState('');
   const inputRef = useRef();
+
   const { currentUser } = useAuth();
+  const { uid, displayName, photoURL } = currentUser;
   const db = firebase.firestore();
   const query = db.collection('messages').orderBy('createdAt').limit(100);
+  const messagesRef = db.collection('messages');
   useEffect(() => {
     // Subscribe to query with onSnapshot
     const unsubscribe = query.onSnapshot(querySnapshot => {
@@ -25,7 +28,6 @@ export default function Chat() {
     return unsubscribe;
   }, []);
 
-  const { uid, displayName, photoURL } = currentUser;
   const handleChange = e => {
     setNewMessage(e.target.value);
   };
