@@ -9,6 +9,7 @@ import Recipes from "./component/Recipes/Recipes";
 import Journals from "./component/Journals/index";
 import PrivateRoute from "./component/PrivateRoute";
 import Appbar from "./component/Appbar";
+import MeditationFacts from "./component/Meditation"
 
 
 class App extends Component {
@@ -23,6 +24,7 @@ class App extends Component {
             <Route path="/login" component={Login} />
             <Route path="/recipes" component={Recipes} />
             <Route path="/journals" component={Journals} />
+            <Route path="/meditation" component={MeditationFacts} />
           </Switch>
         </AuthProvider>
       </Router>

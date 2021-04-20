@@ -38,7 +38,6 @@ function Recipes() {
 >
       {recipes.map((recipe) => {
         console.log(recipe);
-        // const randomNumber = Math.floor(Math.random() * 100) + 1{randomNumber + Math.floor(recipe.calories)}
         return <RecipeReviewCard onClick={handleSave} recipe={recipe} key={uuidv4()} />;
       })}
       </Grid>
