@@ -1,0 +1,22 @@
+#cardOne {
+    float: left;
+    padding-left: 60px;
+    padding-right: 50px;
+    width: 400px;
+  }
+
+  #cardTwo {
+    float: left;
+    padding-right: 50px;
+    width: 400px;
+  }
+
+  #cardTwo {
+    float: left;
+    padding-right: 50px;
+    width: 400px;
+  }
+
+  #standard-multiline-flexible {
+    width: 250px;
+  }

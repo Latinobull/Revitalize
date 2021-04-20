@@ -17,7 +17,7 @@ export default function JournalMenu() {
   return (
     <div>
       <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
-        Open Menu
+        View Past Entries
       </Button>
       <Menu
         id="simple-menu"
