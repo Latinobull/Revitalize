@@ -9,6 +9,8 @@ import Recipes from "./component/Recipes/Recipes";
 import Journals from "./component/Journals/index";
 import PrivateRoute from "./component/PrivateRoute";
 import Appbar from "./component/Appbar";
+
+
 class App extends Component {
   render() {
     return (
