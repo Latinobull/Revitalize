@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import 'firebase/firestore';
 import firebase from 'firebase/app';
 import { useAuth } from '../Authenticate/AuthContext';
+import Message from './Message';
 export default function Chat() {
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState('');
@@ -53,7 +54,10 @@ export default function Chat() {
     <div>
       <ul>
         {messages.map(message => (
-          <li key={message.id}>{message.text}</li>
+          <li key={message.id}>
+            {' '}
+            <Message {...message} />
+          </li>
         ))}
       </ul>
       <form onSubmit={handleSubmit}>
