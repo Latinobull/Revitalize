@@ -1,31 +1,37 @@
-import React, { useContext } from 'react';
-import { db } from '../firebase';
+// import React, { useContext, useState, useEffect } from 'react';
+// import firebase from 'firebase/app';
+// import 'firebase/firestore';
 
-import 'firebase/firestore';
+// const StoreContext = React.createContext();
+// export function useStore() {
+//   return useContext(StoreContext);
+// }
+// export function FirestoreProvider(children) {
 
-const StoreContext = React.createContext();
-export function useStore() {
-  return useContext(StoreContext);
-}
-export function Firestore(children) {
-  function Test() {
-    db.collection('users')
-      .add({
-        first: 'Ada',
-        last: 'Lovelace',
-        born: 1815,
-      })
-      .then(docRef => {
-        console.log('Document written with ID: ', docRef.id);
-      })
-      .catch(error => {
-        console.error('Error adding document: ', error);
-      });
-  }
-  const value = {
-    Test,
-  };
-  return (
-    <StoreContext.Provider value={value}>{children}</StoreContext.Provider>
-  );
-}
+//   const value = {
+//     messages,
+//   };
+//   return (
+//     <StoreContext.Provider value={value}>{children}</StoreContext.Provider>
+//   );
+// }
+
+// CANT GET THIS PAGE TO WORK AND I'M GOING TO GO CRAZY!
+// CANT GET THIS PAGE TO WORK AND I'M GOING TO GO CRAZY!
+// CANT GET THIS PAGE TO WORK AND I'M GOING TO GO CRAZY!
+// CANT GET THIS PAGE TO WORK AND I'M GOING TO GO CRAZY!
+// CANT GET THIS PAGE TO WORK AND I'M GOING TO GO CRAZY!
+// CANT GET THIS PAGE TO WORK AND I'M GOING TO GO CRAZY!
+// CANT GET THIS PAGE TO WORK AND I'M GOING TO GO CRAZY!
+// CANT GET THIS PAGE TO WORK AND I'M GOING TO GO CRAZY!
+// CANT GET THIS PAGE TO WORK AND I'M GOING TO GO CRAZY!
+// CANT GET THIS PAGE TO WORK AND I'M GOING TO GO CRAZY!
+// CANT GET THIS PAGE TO WORK AND I'M GOING TO GO CRAZY!
+// CANT GET THIS PAGE TO WORK AND I'M GOING TO GO CRAZY!
+// CANT GET THIS PAGE TO WORK AND I'M GOING TO GO CRAZY!
+// CANT GET THIS PAGE TO WORK AND I'M GOING TO GO CRAZY!
+// CANT GET THIS PAGE TO WORK AND I'M GOING TO GO CRAZY!
+// CANT GET THIS PAGE TO WORK AND I'M GOING TO GO CRAZY!
+// CANT GET THIS PAGE TO WORK AND I'M GOING TO GO CRAZY!
+// CANT GET THIS PAGE TO WORK AND I'M GOING TO GO CRAZY!
+// CANT GET THIS PAGE TO WORK AND I'M GOING TO GO CRAZY!

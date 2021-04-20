@@ -1,13 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import firebase from 'firebase/app';
 import 'firebase/firestore';
-import { useAuth } from '../Authenticate/AuthContext';
+import firebase from 'firebase/app';
 export default function Chat() {
-  //   const { Test } = useStore();
-  const [error, setError] = useState();
   const [messages, setMessages] = useState([]);
-  const { currentUser } = useAuth();
-  console.log(currentUser);
   const db = firebase.firestore();
   const query = db.collection('messages').orderBy('createdAt').limit(100);
   useEffect(() => {
@@ -25,17 +20,6 @@ export default function Chat() {
     // Detach listener
     return unsubscribe;
   }, []);
-  //   async function handleTest(e) {
-  //     e.preventDefault();
-
-  // try {
-  //   setError('');
-  //   await Test();
-  //   console.log('it worked');
-  // } catch {
-  //   setError('Something went wrong');
-  // }
-  //   }
   return (
     <form>
       <label>Welcome</label>
@@ -45,7 +29,6 @@ export default function Chat() {
           <li key={message.id}>{message.text}</li>
         ))}
       </ul>
-      {error && <h4>{error}</h4>}
     </form>
   );
 }
