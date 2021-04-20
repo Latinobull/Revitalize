@@ -1,10 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import 'firebase/firestore';
 import firebase from 'firebase/app';
+import { useAuth } from '../Authenticate/AuthContext';
 export default function Chat() {
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState('');
   const inputRef = useRef();
+  const { currentUser } = useAuth();
   const db = firebase.firestore();
   const query = db.collection('messages').orderBy('createdAt').limit(100);
   useEffect(() => {
@@ -23,10 +25,28 @@ export default function Chat() {
     return unsubscribe;
   }, []);
 
-  const handleOnChange = e => {
+  const { uid, displayName, photoURL } = currentUser;
+  const handleChange = e => {
     setNewMessage(e.target.value);
   };
 
+  const handleSubmit = e => {
+    e.preventDefault();
+
+    const trimmedMessage = newMessage.trim();
+    if (trimmedMessage) {
+      // Add new message in Firestore
+      messagesRef.add({
+        text: trimmedMessage,
+        createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+        uid,
+        displayName,
+        photoURL,
+      });
+      // Clear input field
+      setNewMessage('');
+    }
+  };
   return (
     <div>
       <ul>
@@ -34,12 +54,12 @@ export default function Chat() {
           <li key={message.id}>{message.text}</li>
         ))}
       </ul>
-      <form onSubmit>
+      <form onSubmit={handleSubmit}>
         <input
           ref={inputRef}
           type="text"
           value={newMessage}
-          onChange={handleOnChange}
+          onChange={handleChange}
           placeholder="Type your message here..."
         />
         <button type="submit" disabled={!newMessage}>
