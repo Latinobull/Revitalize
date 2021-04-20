@@ -3,6 +3,7 @@ import 'firebase/firestore';
 import firebase from 'firebase/app';
 import { useAuth } from '../Authenticate/AuthContext';
 import Message from './Message';
+import 'date-fns';
 export default function Chat() {
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState('');
@@ -13,6 +14,7 @@ export default function Chat() {
   const db = firebase.firestore();
   const query = db.collection('messages').orderBy('createdAt').limit(100);
   const messagesRef = db.collection('messages');
+
   useEffect(() => {
     // Subscribe to query with onSnapshot
     const unsubscribe = query.onSnapshot(querySnapshot => {
