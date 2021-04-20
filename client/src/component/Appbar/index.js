@@ -45,10 +45,6 @@ export default function Appbar() {
   return (
     <div className={classes.root}>
       <FormGroup>
-        {/* <FormControlLabel
-          control={<Switch checked={auth} onChange={handleChange} aria-label="login switch" />}
-          label={auth ? 'Logout' : 'Login'}
-        /> */}
       </FormGroup>
       <AppBar position="static">
         <Toolbar>
@@ -58,6 +54,10 @@ export default function Appbar() {
           <Typography variant="h6" className={classes.title}>
             Mending Minds
           </Typography>
+          <FormControlLabel
+          control={<Switch checked={auth} onChange={handleChange} aria-label="login switch" />}
+          label={auth ? 'Logout' : 'Login'}
+        />
           {auth && (
             <div>
               <IconButton

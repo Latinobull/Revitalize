@@ -1,5 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
+import Button from '@material-ui/core/Button';
 import clsx from "clsx";
 import Card from "@material-ui/core/Card";
 import CardHeader from "@material-ui/core/CardHeader";
@@ -7,21 +8,19 @@ import CardMedia from "@material-ui/core/CardMedia";
 import CardContent from "@material-ui/core/CardContent";
 import CardActions from "@material-ui/core/CardActions";
 import Collapse from "@material-ui/core/Collapse";
-import Avatar from "@material-ui/core/Avatar";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import green from '@material-ui/core/colors/green'
 import FavoriteIcon from "@material-ui/icons/Favorite";
-import ShareIcon from "@material-ui/icons/Share";
+import NearMeIcon from "@material-ui/icons/NearMe";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import MoreVertIcon from "@material-ui/icons/MoreVert";
 import { v4 as uuidv4 } from "uuid";
 import "./style.css";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     width: 345,
-    margin: 10
+    margin: 10,
   },
   media: {
     height: 0,
@@ -43,24 +42,23 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-export default function RecipeReviewCard({ recipe }) {
+export default function RecipeReviewCard({ recipe, handleSave }) {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
-  const kalories = recipe.recipe.calories.toFixed(2);
+  const kalories = Math.round(recipe.recipe.calories) + " " + "Calories"
   return (
     <Card className={classes.root}>
       <CardHeader
         action={
           <IconButton aria-label="settings">
-            <MoreVertIcon />
           </IconButton>
         }
         title={recipe.recipe.label}
-        subheader={kalories}
+        subheader= {kalories} 
       />
       <CardMedia
         className={classes.media}
@@ -75,11 +73,11 @@ export default function RecipeReviewCard({ recipe }) {
         ></Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
+        <IconButton onClick={handleSave}varia-label="add to favorites">
           <FavoriteIcon />
         </IconButton>
-        <IconButton aria-label="share">
-          <ShareIcon />
+        <IconButton href= {recipe.recipe.url}>
+          <NearMeIcon />
         </IconButton>
         <IconButton
           className={clsx(classes.expand, {
@@ -94,7 +92,7 @@ export default function RecipeReviewCard({ recipe }) {
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <Typography paragraph>Ingredients</Typography>
+          <Typography paragraph>Ingredients: </Typography>
           <Typography paragraph>
             {recipe.recipe.ingredients.map((ingredient) => {
               return (
@@ -104,6 +102,14 @@ export default function RecipeReviewCard({ recipe }) {
               );
             })}
           </Typography>
+          <Typography paragraph> Health Labels: </Typography>
+            {recipe.recipe.healthLabels.map((label) =>{
+              return(
+              <Button id="healthLabel" key={uuidv4()} variant="outlined" size="small" color="primary" className={classes.margin}>
+                {label}
+              </Button>
+              )
+            })}
         </CardContent>
       </Collapse>
     </Card>

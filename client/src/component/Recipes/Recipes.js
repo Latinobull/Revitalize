@@ -9,6 +9,7 @@ import { Grid } from "@material-ui/core";
 function Recipes() {
   const [query, setQuery] = useState("");
   const [recipes, setRecipes] = useState([]);
+ 
 
   const url = `https://api.edamam.com/search?q=${query}&app_id=${process.env.REACT_APP_RECIPE_ID}&app_key=${process.env.REACT_APP_RECIPE_KEY}`;
 
@@ -17,6 +18,10 @@ function Recipes() {
       setRecipes(results.data.hits);
     });
   };
+
+  const handleSave = (recipeInfo) => {
+    axios.post("api/recipes", recipeInfo) 
+    };
 
   const handleTyping = function handleTyping(e) {
     setQuery(e.target.value);
@@ -34,7 +39,7 @@ function Recipes() {
       {recipes.map((recipe) => {
         console.log(recipe);
         // const randomNumber = Math.floor(Math.random() * 100) + 1{randomNumber + Math.floor(recipe.calories)}
-        return <RecipeReviewCard recipe={recipe} key={uuidv4()} />;
+        return <RecipeReviewCard onClick={handleSave} recipe={recipe} key={uuidv4()} />;
       })}
       </Grid>
     </div>

@@ -5,8 +5,7 @@ function Header(){
 
     return(
         <div className="header">
-            <h2>Hungry?
-                Just putting this header here as a placeholder. Will fix later</h2> 
+            <h1>Healthy and Nutritious Food Recipes</h1> 
         </div>  
     )
 }

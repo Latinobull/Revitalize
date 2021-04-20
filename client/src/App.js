@@ -10,6 +10,7 @@ import Journals from './component/Journals/index';
 import PrivateRoute from './component/PrivateRoute';
 import Appbar from './component/Appbar';
 import Chat from './component/Chat';
+
 class App extends Component {
   render() {
     return (
