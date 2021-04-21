@@ -41,7 +41,7 @@ export default function JournalCard() {
                 Feelings
               </Typography>
               <TextField
-          id="standard-multiline-flexible"
+          id="feelings"
           label="How are you feeling?"
           multiline
           rowsMax={12}
@@ -69,7 +69,7 @@ export default function JournalCard() {
                 Gratitude
               </Typography>
               <TextField
-          id="standard-multiline-flexible"
+          id="gratitude"
           label="What are you grateful for?"
           multiline
           rowsMax={12}
@@ -98,7 +98,7 @@ export default function JournalCard() {
                 Thoughts
               </Typography>
               <TextField
-          id="standard-multiline-flexible"
+          id="thoughts"
           label="What's on your mind?"
           multiline
           rowsMax={12}
