@@ -11,7 +11,7 @@ export default function Profile({ match }) {
   const {
     params: { uid },
   } = match;
-
+  var imageURL;
   function chooseFile(event) {
     setFile(event.target.files[0]);
   }
@@ -20,17 +20,24 @@ export default function Profile({ match }) {
     e.preventDefault();
     try {
       setError('');
-      await currentUser
-        .updateProfile({
-          displayName: displayNameRef.current.value,
-        })
+      await firebase
+        .storage()
+        .ref('users/' + currentUser.uid + '/profile.jpg')
+        .put(setFile)
         .then(() => {
           firebase
             .storage()
             .ref('users/' + currentUser.uid + '/profile.jpg')
-            .put(setFile)
+            .getDownloadURL()
+            .then(url => {
+              imageURL = url;
+            })
             .then(() => {
-              console.log('it works');
+              currentUser.updateProfile({
+                displayName: displayNameRef.current.value,
+                photoURL: imageURL,
+              });
+              console.log(imageURL);
             });
         });
     } catch (err) {
@@ -41,7 +48,7 @@ export default function Profile({ match }) {
   return (
     <div>
       <h1>{currentUser.displayName}'s Page</h1>
-      <img src="https://via.placeholder.com/150/" />
+      <img src={currentUser.photoURL} />
       <form>
         <input type="file" onChange={chooseFile} />
         <input
