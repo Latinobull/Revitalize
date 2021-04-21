@@ -3,31 +3,21 @@ import { useAuth } from '../Authenticate/AuthContext';
 import firebase from 'firebase/app';
 import '@firebase/storage';
 import app from '../firebase';
-export default function Profile({ match }) {
+export default function Profile({}) {
   const [error, setError] = useState('');
   const displayNameRef = useRef();
   const { currentUser } = useAuth();
-  const {
-    params: { uid },
-  } = match;
   var imageURL;
   var file;
-  var metadata = {
-    contentType: 'image/png',
-  };
   const onFileChange = e => {
     file = e.target.files[0];
     const storageRef = app
       .storage()
       .ref('users/' + currentUser.uid + '/profile.jpg');
     const fileRef = storageRef.child(file.name);
-    fileRef.put(file).then(() => {
-      console.log('image:' + file);
-    });
+    fileRef.put(file).then(() => {});
   };
-  console.log('image:' + file);
-  async function handleSubmit(e) {
-    e.preventDefault();
+  async function handleSubmit() {
     try {
       setError('');
       await firebase
@@ -69,10 +59,10 @@ export default function Profile({ match }) {
         ></input>
         <button onClick={handleSubmit}>Change Display Name</button>
       </form>
-      <p>
+      {/* <p>
         <strong>User ID: </strong>
         {uid}
-      </p>
+      </p> */}
       {error && <h5>{error}</h5>}
     </div>
   );
