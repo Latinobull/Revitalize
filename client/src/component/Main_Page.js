@@ -47,15 +47,6 @@ export default function Main_Page() {
       )}
       <button onClick={handleLogut}>Log Out</button>
       <br />
-      <form onSubmit={handleNameChange}>
-        <input
-          type="name"
-          name="DisplayName"
-          placeholder="DisplayName"
-          ref={displayNameRef}
-        ></input>
-        <button type="submit">Change Display Name</button>
-      </form>
       {error && <h5>{error}</h5>}
     </div>
   );
