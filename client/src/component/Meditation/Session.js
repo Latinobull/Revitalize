@@ -3,10 +3,10 @@ import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
 
-function Session (){
+function Session (props){
+    const percentage = 100;
 return (
-
-<div></div>
+    <CircularProgressbar value={percentage} text={`${percentage}%`} />
 )
 
 }
