@@ -1,0 +1,37 @@
+// import React, { useContext, useState, useEffect } from 'react';
+// import firebase from 'firebase/app';
+// import 'firebase/firestore';
+
+// const StoreContext = React.createContext();
+// export function useStore() {
+//   return useContext(StoreContext);
+// }
+// export function FirestoreProvider(children) {
+
+//   const value = {
+//     messages,
+//   };
+//   return (
+//     <StoreContext.Provider value={value}>{children}</StoreContext.Provider>
+//   );
+// }
+
+// CANT GET THIS PAGE TO WORK AND I'M GOING TO GO CRAZY!
+// CANT GET THIS PAGE TO WORK AND I'M GOING TO GO CRAZY!
+// CANT GET THIS PAGE TO WORK AND I'M GOING TO GO CRAZY!
+// CANT GET THIS PAGE TO WORK AND I'M GOING TO GO CRAZY!
+// CANT GET THIS PAGE TO WORK AND I'M GOING TO GO CRAZY!
+// CANT GET THIS PAGE TO WORK AND I'M GOING TO GO CRAZY!
+// CANT GET THIS PAGE TO WORK AND I'M GOING TO GO CRAZY!
+// CANT GET THIS PAGE TO WORK AND I'M GOING TO GO CRAZY!
+// CANT GET THIS PAGE TO WORK AND I'M GOING TO GO CRAZY!
+// CANT GET THIS PAGE TO WORK AND I'M GOING TO GO CRAZY!
+// CANT GET THIS PAGE TO WORK AND I'M GOING TO GO CRAZY!
+// CANT GET THIS PAGE TO WORK AND I'M GOING TO GO CRAZY!
+// CANT GET THIS PAGE TO WORK AND I'M GOING TO GO CRAZY!
+// CANT GET THIS PAGE TO WORK AND I'M GOING TO GO CRAZY!
+// CANT GET THIS PAGE TO WORK AND I'M GOING TO GO CRAZY!
+// CANT GET THIS PAGE TO WORK AND I'M GOING TO GO CRAZY!
+// CANT GET THIS PAGE TO WORK AND I'M GOING TO GO CRAZY!
+// CANT GET THIS PAGE TO WORK AND I'M GOING TO GO CRAZY!
+// CANT GET THIS PAGE TO WORK AND I'M GOING TO GO CRAZY!
