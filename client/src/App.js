@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Signup from './component/Signup2.0';
-import { AuthProvider, useAuth } from './Authenticate/AuthContext';
+import { AuthProvider } from './Authenticate/AuthContext';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Main_Page from './component/Main_Page';
 import Login from './component/Login2.0';
