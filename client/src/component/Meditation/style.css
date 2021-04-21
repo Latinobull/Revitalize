@@ -5,14 +5,14 @@
  }
 
 body{
-    /* background-image: url("../../assets/images/534351.jpg"); */
+    /* background-image: url("../../assets/images/chakras.png"); */
     background-repeat:no-repeat;
     background-attachment: fixed;
     background-position: center;
     font-size: 1rem;    
     color: rgb(0, 0, 0);
     position:static;    
-    background-size: cover;
+    background-size:auto;
 }
 
 html, body {
@@ -35,12 +35,13 @@ html, body {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color:white;
     margin-top: 20px;
  }
 
  .post-back {
     transform: rotateY(180deg);
+    /* background-color: white; */
+    color: black;
  }
 
  .post-front, .post-back {
@@ -57,11 +58,6 @@ html, body {
     /* Existing styles here */
     transition: transform 1s;
     transform-style: preserve-3d;   
- }
- .post-front, .post-back {
-    /* Existing styles here */
-    border-radius: 10px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
  }
 
  .post-img {
@@ -86,7 +82,6 @@ html, body {
 
  	
 .post-back {
-    background-color: white;
     padding: 30px;
     display: flex;
     flex-direction: column;
@@ -111,7 +106,6 @@ html, body {
     letter-spacing: 0.05em;
     font-size: 0.8em;
     font-weight: bold;
-    border-radius: 5px;
  }
 
  .container {
@@ -147,10 +141,10 @@ html, body {
 
 .practice{
    display: block;
-   border-radius: 150px;
-   -webkit-border-radius: 150px;
-   -moz-border-radius: 150px; 
-   width: 250px;
-   height: 250px;
+   border-radius: 100px;
+   -webkit-border-radius: 100px;
+   -moz-border-radius: 100px; 
+   width: 200px;
+   height: 200px;
 }
 
