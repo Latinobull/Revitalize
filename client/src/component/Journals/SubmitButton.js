@@ -2,6 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 
+
 const useStyles = makeStyles((theme) => ({
   root: {
     '& > *': {
@@ -21,3 +22,19 @@ export default function SubmitButton() {
     </div>
   );
 }
+
+
+// const express = require('express');
+// const router = express.Router();
+// const mongodb = require('mongodb').MongoClient;
+
+// router.post('/insert', function(req, res) {
+//   let journalEntry = {
+//     feelings: req.body.feelings,
+//     gratitude: req.body.gratitude,
+//     thoughts: req.body.thoughts
+//   };
+
+//   function handleSubmit(){
+
+//   }
