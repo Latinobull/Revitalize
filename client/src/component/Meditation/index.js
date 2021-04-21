@@ -1,6 +1,7 @@
 import React from "react";
 import "./style.css";
-import Icon from '@material-ui/core/Icon';
+import {useHistory} from "react-router-dom"
+// import Icon from '@material-ui/core/Icon';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import { Grid } from "@material-ui/core";
@@ -21,6 +22,11 @@ const useStyles = makeStyles((theme) => ({
   }));
 
 function MeditationFacts() {
+    const history = useHistory();
+
+    function handleClick() {
+      history.push("/session");
+    }
     const classes = useStyles();
 
     return(
@@ -158,6 +164,7 @@ function MeditationFacts() {
         variant="contained"
         color="primary"
         className={classes.button}
+        onClick={handleClick}
       >
        Begin Meditation
       </Button>
