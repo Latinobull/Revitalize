@@ -2,20 +2,30 @@ import React, { useRef, useState } from 'react';
 import { useAuth } from '../Authenticate/AuthContext';
 import firebase from 'firebase/app';
 import '@firebase/storage';
+import app from '../firebase';
 export default function Profile({ match }) {
   const [error, setError] = useState('');
   const displayNameRef = useRef();
-  const [file, setFile] = useState();
-  const [isSelected, setIsSelected] = useState(false);
   const { currentUser } = useAuth();
   const {
     params: { uid },
   } = match;
   var imageURL;
-  function chooseFile(event) {
-    setFile(event.target.files[0]);
-  }
-
+  var file;
+  var metadata = {
+    contentType: 'image/png',
+  };
+  const onFileChange = e => {
+    file = e.target.files[0];
+    const storageRef = app
+      .storage()
+      .ref('users/' + currentUser.uid + '/profile.jpg');
+    const fileRef = storageRef.child(file.name);
+    fileRef.put(file).then(() => {
+      console.log('image:' + file);
+    });
+  };
+  console.log('image:' + file);
   async function handleSubmit(e) {
     e.preventDefault();
     try {
@@ -23,7 +33,7 @@ export default function Profile({ match }) {
       await firebase
         .storage()
         .ref('users/' + currentUser.uid + '/profile.jpg')
-        .put(setFile)
+        .put(file)
         .then(() => {
           firebase
             .storage()
@@ -50,7 +60,7 @@ export default function Profile({ match }) {
       <h1>{currentUser.displayName}'s Page</h1>
       <img src={currentUser.photoURL} />
       <form>
-        <input type="file" onChange={chooseFile} />
+        <input type="file" onChange={onFileChange} />
         <input
           type="name"
           name="DisplayName"
