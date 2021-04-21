@@ -1,5 +1,8 @@
 import React from "react";
 import "./style.css";
+import Icon from '@material-ui/core/Icon';
+import Button from '@material-ui/core/Button';
+import { makeStyles } from '@material-ui/core/styles';
 import { Grid } from "@material-ui/core";
 import stressimg from "../../assets/images/stressimg.jpeg";
 import canxiety from "../../assets/images/canxiety.jpeg";
@@ -10,7 +13,15 @@ import sleep from "../../assets/images/sleep.jpeg";
 import bloodpressure from "../../assets/images/bloodpressure.jpeg";
 import pain from "../../assets/images/pain.jpeg";
 
+
+const useStyles = makeStyles((theme) => ({
+    button: {
+      margin: theme.spacing(1),
+    },
+  }));
+
 function MeditationFacts() {
+    const classes = useStyles();
 
     return(
         <div>
@@ -137,6 +148,20 @@ function MeditationFacts() {
        </div>
    </div>
      </Grid>
+     <Grid
+  container
+  direction="row"
+  justify="center"
+  alignItems="center"
+>
+     <Button
+        variant="contained"
+        color="primary"
+        className={classes.button}
+      >
+       Begin Meditation
+      </Button>
+      </Grid>
      </div>
     )
 }
