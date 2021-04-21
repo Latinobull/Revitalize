@@ -1,5 +1,5 @@
 const express = require('express');
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 const path = require('path');
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -16,7 +16,12 @@ app.get('*', function (req, res) {
   res.sendFile(path.join(__dirname, './client/build/index.html'));
 });
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/journals");
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/journals', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+  useFindAndModify: false,
+});
 
 app.listen(PORT, function () {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
