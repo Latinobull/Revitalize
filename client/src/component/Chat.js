@@ -4,6 +4,16 @@ import firebase from 'firebase/app';
 import { useAuth } from '../Authenticate/AuthContext';
 import Message from './Message';
 import 'date-fns';
+import {
+  Avatar,
+  Grid,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+  makeStyles,
+  Typography,
+} from '@material-ui/core';
 export default function Chat() {
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState('');
@@ -15,18 +25,15 @@ export default function Chat() {
   const messagesRef = db.collection('messages');
 
   useEffect(() => {
-    // Subscribe to query with onSnapshot
     const unsubscribe = query.onSnapshot(querySnapshot => {
-      // Get all documents from collection - with IDs
       const data = querySnapshot.docs.map(doc => ({
         ...doc.data(),
         id: doc.id,
       }));
-      // Update state
+
       setMessages(data);
     });
 
-    // Detach listener
     return unsubscribe;
   }, []);
 
@@ -39,7 +46,6 @@ export default function Chat() {
 
     const trimmedMessage = newMessage.trim();
     if (trimmedMessage) {
-      // Add new message in Firestore
       messagesRef.add({
         text: trimmedMessage,
         createdAt: firebase.firestore.FieldValue.serverTimestamp(),
@@ -47,32 +53,72 @@ export default function Chat() {
         displayName,
         photoURL,
       });
-      // Clear input field
       setNewMessage('');
     }
   };
+
+  const useStyles = makeStyles({
+    table: {
+      minWidth: 650,
+    },
+    chatSection: {
+      width: '100%',
+      height: '80vh',
+    },
+    headBG: {
+      backgroundColor: '#e0e0e0',
+    },
+    borderRight500: {
+      borderRight: '1px solid #e0e0e0',
+    },
+    messageArea: {
+      height: '70vh',
+      overflowY: 'auto',
+    },
+  });
+
+  const classes = useStyles();
+
   return (
     <div>
-      <ul>
-        {messages.map(message => (
-          <li key={message.id}>
-            {' '}
-            <Message {...message} />
-          </li>
-        ))}
-      </ul>
-      <form onSubmit={handleSubmit}>
-        <input
-          ref={inputRef}
-          type="text"
-          value={newMessage}
-          onChange={handleChange}
-          placeholder="Type your message here..."
-        />
-        <button type="submit" disabled={!newMessage}>
-          Send
-        </button>
-      </form>
+      <Grid container>
+        <Grid item xs={12}>
+          <Typography variant="h5" className="header-message">
+            Revitalize Chat
+          </Typography>
+        </Grid>
+      </Grid>
+      <Grid container className={classes.chatSection}>
+        <List>
+          <ListItem button key="RemySharp">
+            <ListItemIcon>
+              <Avatar alt="RemySharp" src={currentUser.photoURL}></Avatar>
+            </ListItemIcon>
+            <ListItemText primary={currentUser.displayName}></ListItemText>
+          </ListItem>
+        </List>
+        <Grid item xs={3} className={classes.borderRight500}></Grid>
+        <ul>
+          {messages.map(message => (
+            <li key={message.id}>
+              {' '}
+              <Message {...message} />
+            </li>
+          ))}
+        </ul>
+        <form onSubmit={handleSubmit}>
+          <input
+            ref={inputRef}
+            type="text"
+            value={newMessage}
+            onChange={handleChange}
+            placeholder="Type your message here..."
+          />
+          <button type="submit" disabled={!newMessage}>
+            Send
+          </button>
+        </form>
+      </Grid>
     </div>
   );
 }
