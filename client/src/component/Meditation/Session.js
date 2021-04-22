@@ -3,11 +3,10 @@ import ProgressBar from "./Progressbar";
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import AccessAlarmIcon from '@material-ui/icons/AccessAlarm';
-import { PromiseProvider } from "mongoose";
+import "./style.css"
+import Grid from '@material-ui/core/Grid';
 
 
-
-// const [time, setTime] = useState("");
 
 const useStyles = makeStyles((theme) => ({
     button: {
@@ -16,11 +15,19 @@ const useStyles = makeStyles((theme) => ({
   }));
 
 function Session(){
+    const [seconds, setSeconds] = useState(0);
     const classes = useStyles();
+
     return(
-        <div>
-<ProgressBar />
-<Button
+        <div classname= "sessionopt">
+<ProgressBar seconds={seconds}/>
+<Grid   className="btngrp"
+  container
+  direction="row"
+  justify="center"
+  alignItems="center"
+>
+<Button onClick={()=>setSeconds(60)}
         variant="contained"
         color="default"
         className={classes.button}
@@ -28,7 +35,7 @@ function Session(){
       >
         1 min
       </Button>
-      <Button
+      <Button onClick={()=>setSeconds(300)}
         variant="contained"
         color="default"
         className={classes.button}
@@ -36,7 +43,7 @@ function Session(){
       >
         5 mins
       </Button>
-      <Button
+      <Button onClick={()=>setSeconds(600)}
         variant="contained"
         color="default"
         className={classes.button}
@@ -44,7 +51,7 @@ function Session(){
       >
         10 mins
       </Button>
-      <Button
+      <Button onClick={()=>setSeconds(1200)}
         variant="contained"
         color="default"
         className={classes.button}
@@ -52,8 +59,10 @@ function Session(){
       >
         20 mins
       </Button>
-        </div>
+      </Grid>
+      </div>
     )
+    
 }
 
 export default Session;

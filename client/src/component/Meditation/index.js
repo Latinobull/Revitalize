@@ -154,6 +154,7 @@ function MeditationFacts() {
        </div>
    </div>
      </Grid>
+     <br></br>
      <Grid
   container
   direction="row"
