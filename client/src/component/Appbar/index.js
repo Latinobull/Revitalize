@@ -34,7 +34,7 @@ export default function Appbar() {
   const [anchorElHome, setAnchorElHome] = React.useState(null);
   const openHome = Boolean(anchorElHome);
   const open = Boolean(anchorEl);
-  const { currentUser, Login, Logout } = useAuth();
+  const { currentUser, Logout } = useAuth();
   const history = useHistory();
 
   console.log(currentUser);
