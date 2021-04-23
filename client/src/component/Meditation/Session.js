@@ -25,7 +25,7 @@ function Session(){
   
     useEffect(()=>{
       const interval = setInterval(() => {
-        if (seconds == 0) return 
+        if (seconds === 0) return 
         if (seconds > 0){
           setSeconds(seconds => seconds -1)
           setSecondsValue(seconds % 60)
