@@ -6,6 +6,7 @@ import Message from './Message';
 import 'date-fns';
 import {
   Avatar,
+  Divider,
   Grid,
   List,
   ListItem,
@@ -89,35 +90,39 @@ export default function Chat() {
         </Grid>
       </Grid>
       <Grid container className={classes.chatSection}>
-        <List>
-          <ListItem button key="RemySharp">
-            <ListItemIcon>
-              <Avatar alt="RemySharp" src={currentUser.photoURL}></Avatar>
-            </ListItemIcon>
-            <ListItemText primary={currentUser.displayName}></ListItemText>
-          </ListItem>
-        </List>
-        <Grid item xs={3} className={classes.borderRight500}></Grid>
-        <ul>
-          {messages.map(message => (
-            <li key={message.id}>
-              {' '}
-              <Message {...message} />
-            </li>
-          ))}
-        </ul>
-        <form onSubmit={handleSubmit}>
-          <input
-            ref={inputRef}
-            type="text"
-            value={newMessage}
-            onChange={handleChange}
-            placeholder="Type your message here..."
-          />
-          <button type="submit" disabled={!newMessage}>
-            Send
-          </button>
-        </form>
+        <Grid item xs={3} className={classes.borderRight500}>
+          <List>
+            <ListItem button key="RemySharp">
+              <ListItemIcon>
+                <Avatar alt="RemySharp" src={currentUser.photoURL}></Avatar>
+              </ListItemIcon>
+              <ListItemText primary={currentUser.displayName}></ListItemText>
+            </ListItem>
+          </List>
+          <Divider />
+        </Grid>
+        <Grid item xs={9}>
+          <List className={classes.messageArea}>
+            {messages.map(message => (
+              <li key={message.id}>
+                {' '}
+                <Message {...message} />
+              </li>
+            ))}
+          </List>
+          <form onSubmit={handleSubmit}>
+            <input
+              ref={inputRef}
+              type="text"
+              value={newMessage}
+              onChange={handleChange}
+              placeholder="Type your message here..."
+            />
+            <button type="submit" disabled={!newMessage}>
+              Send
+            </button>
+          </form>
+        </Grid>
       </Grid>
     </div>
   );
