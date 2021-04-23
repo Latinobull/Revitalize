@@ -49,7 +49,7 @@ export default function Appbar() {
     setAnchorElHome(event.currentTarget);
   };
 
-  const handleCloseHome = event => {
+  const handleCloseHome = () => {
     setAnchorElHome(null);
   };
 
