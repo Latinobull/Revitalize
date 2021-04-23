@@ -143,8 +143,9 @@ export default function Appbar() {
                 open={open}
                 onClose={handleClose}
               >
-                <MenuItem onClick={handleClose}>Profile</MenuItem>
-                <MenuItem onClick={handleClose}>My account</MenuItem>
+                <MenuItem onClick={handleClose}>
+                  <Link href="/profile/:uid">My Account</Link>
+                </MenuItem>
               </Menu>
             </div>
           )}
