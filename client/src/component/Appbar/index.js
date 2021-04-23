@@ -92,6 +92,16 @@ export default function Appbar() {
                 Chat
               </Link>
             </MenuItem>
+            <MenuItem onClick={handleCloseHome}>
+              <Link href="/Physical" color="inherit">
+                Physical Health
+              </Link>
+            </MenuItem>
+            <MenuItem onClick={handleCloseHome}>
+              <Link href="/Mental" color="inherit">
+                Mental Health
+              </Link>
+            </MenuItem>
           </Menu>
 
           <Typography variant="h6" className={classes.title}>
