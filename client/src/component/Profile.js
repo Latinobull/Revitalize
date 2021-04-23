@@ -16,6 +16,7 @@ export default function Profile({}) {
       .ref('users/' + currentUser.uid + '/profile.jpg');
     const fileRef = storageRef.child(file.name);
     fileRef.put(file).then(() => {
+      //ASK TA WHY THIS HAS TO BE HERE
       console.log('image:' + file);
     });
   };
