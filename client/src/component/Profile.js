@@ -3,7 +3,7 @@ import { useAuth } from '../Authenticate/AuthContext';
 import firebase from 'firebase/app';
 import '@firebase/storage';
 import app from '../firebase';
-export default function Profile({}) {
+export default function Profile() {
   const [error, setError] = useState('');
   const displayNameRef = useRef();
   const { currentUser } = useAuth();
