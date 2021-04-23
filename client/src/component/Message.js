@@ -1,5 +1,6 @@
 import React from 'react';
 import { formatRelative } from 'date-fns';
+import { Grid, ListItemText } from '@material-ui/core';
 
 const formatDate = date => {
   let formattedDate = '';
@@ -12,24 +13,25 @@ const formatDate = date => {
   }
   return formattedDate;
 };
-const Message = ({ createdAt, text = '', displayName = '', photoURL = '' }) => {
+const Message = ({ createdAt, text = '', displayName = '' }) => {
   if (!text) return null;
   return (
     <div>
       {' '}
-      {photoURL ? (
-        <img src={photoURL} alt="Avatar" width={45} height={45} />
-      ) : null}
-      <div>
-        <div>
-          <p>{displayName}</p>
-
-          {createdAt && (
-            <span>{formatDate(new Date(createdAt.seconds * 1000))}</span>
-          )}
-        </div>
-        <p>{text}</p>
-      </div>
+      <Grid container>
+        <Grid item xs={12}>
+          <ListItemText align="right" primary={text}></ListItemText>
+          <Grid item xs={12}>
+            <ListItemText align="right" secondary={displayName}></ListItemText>
+            {createdAt && (
+              <ListItemText
+                align="right"
+                secondary={formatDate(new Date(createdAt.seconds * 1000))}
+              ></ListItemText>
+            )}
+          </Grid>
+        </Grid>
+      </Grid>
     </div>
   );
 };
