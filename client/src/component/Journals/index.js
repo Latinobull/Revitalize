@@ -8,21 +8,12 @@ import Banner from "./Banner/index";
 function Journals() {
   return (
     <>
-   <Banner>
-   </Banner>
+   <Banner/>
    
-   <JournalMenu>
-   </JournalMenu>
+   <JournalMenu/>
 
+   <JournalCard/>
 
-
-   <JournalCard>
-   </JournalCard>
-
- 
-
-   <SubmitButton>
-   </SubmitButton>
   </>
   );
 }
