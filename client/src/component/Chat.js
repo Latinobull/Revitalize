@@ -7,14 +7,17 @@ import 'date-fns';
 import {
   Avatar,
   Divider,
+  Fab,
   Grid,
   List,
   ListItem,
   ListItemIcon,
   ListItemText,
   makeStyles,
+  TextField,
   Typography,
 } from '@material-ui/core';
+import SendIcon from '@material-ui/icons/Send';
 export default function Chat() {
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState('');
@@ -110,18 +113,25 @@ export default function Chat() {
               </li>
             ))}
           </List>
-          <form onSubmit={handleSubmit}>
-            <input
-              ref={inputRef}
-              type="text"
-              value={newMessage}
-              onChange={handleChange}
-              placeholder="Type your message here..."
-            />
-            <button type="submit" disabled={!newMessage}>
-              Send
-            </button>
-          </form>
+          <Divider />
+          <Grid container style={{ padding: '20px' }}>
+            <Grid item xs={11}>
+              <TextField
+                id="outlined-basic-email"
+                ref={inputRef}
+                type="text"
+                value={newMessage}
+                onChange={handleChange}
+                placeholder="Type your message here..."
+                fullWidth
+              />
+            </Grid>
+            <Grid xs={1} align="right">
+              <Fab type="submit" disabled={!newMessage} onClick={handleSubmit}>
+                <SendIcon />
+              </Fab>
+            </Grid>
+          </Grid>
         </Grid>
       </Grid>
     </div>
