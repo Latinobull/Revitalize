@@ -26,9 +26,9 @@ function Session(){
     useEffect(()=>{
       const interval = setInterval(() => {
         if (seconds === 0) return 
-        if (seconds > 0){
+        if (seconds > 0){ // when it gets to 0, it doesn't go to 0 it stays at 1 sec remaining
           setSeconds(seconds => seconds -1)
-          setSecondsValue(seconds % 60)
+          setSecondsValue(seconds % 60 -1)
           setMinsValue(Math.floor(seconds / 60))
         }
       }, 1000)

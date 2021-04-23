@@ -11,7 +11,7 @@ return (
   
 
     <div className="sessionopt" style={{ width: 200, height: 200}}>      
-    <CircularProgressbar onClick={props.value} maxValue={props.seconds} text={`${props.minsValue} : ${props.secondsValue < 10 ? props.secondsValue : props.secondsValue} `} 
+    <CircularProgressbar onClick={props.value} maxValue={props.seconds} text={`${props.minsValue} : ${props.secondsValue}`} 
    
    styles={buildStyles({
     rotation: 0.25,
@@ -23,13 +23,13 @@ return (
     textSize: '16px',
 
     // How long animation takes to go from one percentage to another, in seconds
-    pathTransitionDuration: 1.0,
+    pathTransitionDuration: 0.5,
 
     // Can specify path transition in more detail, or remove it entirely
-    // pathTransition: 'none',
+    pathTransition: 'stroke-dashoffset 0.5s ease 0s',
 
     // Colors
-    pathColor: `rgba(62, 152, 199, ${props.minsValue} ${props.secondsValue} / ${props.seconds})`,
+    pathColor: `rgba(62, 152, 199, ${props.minsValue} : ${props.secondsValue} / ${props.seconds})`,
     textColor: '#f88',
     trailColor: '#d6d6d6',
     backgroundColor: '#3e98c7',

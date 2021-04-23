@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { useAuth } from '../Authenticate/AuthContext';
-import "../../src/landing.css"
+
 
 export default function Login() {
   const emailRef = useRef();
