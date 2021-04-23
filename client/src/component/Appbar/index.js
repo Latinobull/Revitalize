@@ -12,6 +12,8 @@ import FormGroup from '@material-ui/core/FormGroup';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import { Link } from '@material-ui/core';
+import { useAuth } from '../../Authenticate/AuthContext';
+import { useHistory } from 'react-router';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -27,14 +29,27 @@ const useStyles = makeStyles(theme => ({
 
 export default function Appbar() {
   const classes = useStyles();
-  const [auth, setAuth] = React.useState(true);
+  const [auth, setAuth] = React.useState(null);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [anchorElHome, setAnchorElHome] = React.useState(null);
   const openHome = Boolean(anchorElHome);
   const open = Boolean(anchorEl);
+  const { currentUser, Login, Logout } = useAuth();
+  const history = useHistory();
 
-  const handleChange = event => {
-    setAuth(event.target.checked);
+  console.log(currentUser);
+  const handleChange = () => {
+    if (currentUser && Login) {
+      setAuth(true);
+    } else {
+      history.push('/login');
+      setAuth(false);
+    }
+
+    if (auth == true) {
+      setAuth(false);
+      return Logout();
+    }
   };
 
   const handleMenu = event => {

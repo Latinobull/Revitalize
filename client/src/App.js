@@ -12,14 +12,14 @@ import Appbar from './component/Appbar';
 import Chat from './component/Chat';
 import Profile from './component/Profile';
 import MeditationFacts from './component/Meditation';
-import Session from "./component/Meditation/Session";
+import Session from './component/Meditation/Session';
 
 class App extends Component {
   render() {
     return (
       <Router>
-        <Appbar />
         <AuthProvider>
+          <Appbar />
           <Switch>
             <PrivateRoute exact path="/" component={Main_Page} />
             <Route path="/signup" component={Signup} />
