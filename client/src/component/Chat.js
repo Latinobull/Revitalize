@@ -6,6 +6,7 @@ import Message from './Message';
 import 'date-fns';
 import {
   Avatar,
+  Button,
   Divider,
   Fab,
   Grid,
@@ -78,16 +79,21 @@ export default function Chat() {
     messageArea: {
       height: '70vh',
       overflowY: 'auto',
+      paddingRight: '35px',
     },
   });
 
   const classes = useStyles();
+  const divRef = useRef(null);
 
+  useEffect(() => {
+    divRef.current.scrollIntoView({ behavior: 'smooth' });
+  });
   return (
     <div>
       <Grid container>
         <Grid item xs={12}>
-          <Typography variant="h5" className="header-message">
+          <Typography variant="h5" className="header-message" align="center">
             Revitalize Chat
           </Typography>
         </Grid>
@@ -112,26 +118,29 @@ export default function Chat() {
                 <Message {...message} />
               </li>
             ))}
+            <div ref={divRef}></div>
           </List>
           <Divider />
-          <Grid container style={{ padding: '20px' }}>
-            <Grid item xs={11}>
-              <TextField
-                id="outlined-basic-email"
-                ref={inputRef}
-                type="text"
-                value={newMessage}
-                onChange={handleChange}
-                placeholder="Type your message here..."
-                fullWidth
-              />
+          <form onSubmit={handleSubmit}>
+            <Grid container style={{ padding: '20px' }}>
+              <Grid item xs={11}>
+                <TextField
+                  id="outlined-basic-email"
+                  ref={inputRef}
+                  type="text"
+                  value={newMessage}
+                  onChange={handleChange}
+                  placeholder="Type your message here..."
+                  fullWidth
+                />
+              </Grid>
+              <Grid xs={1} align="right">
+                <Button type="submit" disabled={!newMessage}>
+                  <SendIcon />
+                </Button>
+              </Grid>
             </Grid>
-            <Grid xs={1} align="right">
-              <Fab type="submit" disabled={!newMessage} onClick={handleSubmit}>
-                <SendIcon />
-              </Fab>
-            </Grid>
-          </Grid>
+          </form>
         </Grid>
       </Grid>
     </div>

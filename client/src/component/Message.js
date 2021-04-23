@@ -32,6 +32,7 @@ const Message = ({ createdAt, text = '', displayName = '' }) => {
           </Grid>
         </Grid>
       </Grid>
+      <br />
     </div>
   );
 };
