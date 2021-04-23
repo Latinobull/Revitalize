@@ -2,10 +2,13 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router';
 import { useAuth } from '../Authenticate/AuthContext';
 import {
+  Button,
   Card,
   CardActionArea,
+  CardActions,
   CardContent,
   CardMedia,
+  Divider,
   Grid,
   makeStyles,
   Typography,
@@ -17,6 +20,16 @@ const useStyles = makeStyles({
   },
   header: {
     paddingBottom: '60px',
+  },
+  button: {
+    background: 'linear-gradient(45deg, #FAE5DF 30%, #ed7966 90%)',
+    border: 0,
+    borderRadius: 3,
+    boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+    color: '#141850',
+    height: 48,
+    padding: '0 30px',
+    justifyContent: 'center',
   },
 });
 export default function Main_Page() {
@@ -78,6 +91,12 @@ export default function Main_Page() {
                   </Typography>
                 </CardContent>
               </CardActionArea>
+              <Divider variant="middle" />
+              <CardActions>
+                <Button size="large" className={classes.button}>
+                  Enter the Physical Health Section
+                </Button>
+              </CardActions>
             </Card>
           </Grid>
           <Grid item md xs={12}>
@@ -101,6 +120,12 @@ export default function Main_Page() {
                   </Typography>
                 </CardContent>
               </CardActionArea>
+              <Divider variant="middle" />
+              <CardActions>
+                <Button size="large" className={classes.button}>
+                  Enter the Mental Health Section
+                </Button>
+              </CardActions>
             </Card>
           </Grid>
           <Grid item md xs={12}>
@@ -124,6 +149,12 @@ export default function Main_Page() {
                   </Typography>
                 </CardContent>
               </CardActionArea>
+              <Divider variant="middle" />
+              <CardActions>
+                <Button size="large" className={classes.button}>
+                  Enter the Chat
+                </Button>
+              </CardActions>
             </Card>
           </Grid>
         </Grid>
