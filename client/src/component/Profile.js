@@ -15,9 +15,12 @@ export default function Profile({}) {
       .storage()
       .ref('users/' + currentUser.uid + '/profile.jpg');
     const fileRef = storageRef.child(file.name);
-    fileRef.put(file).then(() => {});
+    fileRef.put(file).then(() => {
+      console.log('image:' + file);
+    });
   };
-  async function handleSubmit() {
+  async function handleSubmit(e) {
+    e.preventDefault();
     try {
       setError('');
       await firebase
@@ -38,6 +41,7 @@ export default function Profile({}) {
                 photoURL: imageURL,
               });
               console.log(imageURL);
+              file = currentUser.photoURL;
             });
         });
     } catch (err) {
