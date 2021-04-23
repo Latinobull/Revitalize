@@ -10,6 +10,7 @@ import {
   CardMedia,
   Divider,
   Grid,
+  Link,
   makeStyles,
   Typography,
 } from '@material-ui/core';
@@ -97,7 +98,9 @@ export default function Main_Page() {
               <Divider variant="middle" />
               <CardActions>
                 <Button size="large" className={classes.button}>
-                  Enter the Physical Health Section
+                  <Link href="/physical" color="inherit">
+                    Enter the Physical Health Section
+                  </Link>
                 </Button>
               </CardActions>
             </Card>
@@ -126,7 +129,9 @@ export default function Main_Page() {
               <Divider variant="middle" />
               <CardActions>
                 <Button size="large" className={classes.button}>
-                  Enter the Mental Health Section
+                  <Link href="/mental" color="inherit">
+                    Enter the Mental Health Section
+                  </Link>
                 </Button>
               </CardActions>
             </Card>
@@ -155,14 +160,16 @@ export default function Main_Page() {
               <Divider variant="middle" />
               <CardActions>
                 <Button size="large" className={classes.button}>
-                  Enter the Chat
+                  <Link href="/chat" color="inherit">
+                    Enter the Chat
+                  </Link>
                 </Button>
               </CardActions>
             </Card>
           </Grid>
         </Grid>
       </div>
-      {/* <button onClick={handleLogut}>Log Out</button> */}
+      <button onClick={handleLogut}>Log Out</button>
       <br />
       {error && <h5>{error}</h5>}
     </div>
