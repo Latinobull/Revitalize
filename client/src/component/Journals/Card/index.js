@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from 'react';
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
@@ -9,9 +9,10 @@ import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import TextField from '@material-ui/core/TextField';
 import "./style.css";
-import Wave from "../../../images/wave.jpg"
-import Bird from "../../../images/bird.jpg"
-import Tree from "../../../images/tree.jpg"
+import Wave from "../../../images/wave.jpg";
+import Bird from "../../../images/bird.jpg";
+import Tree from "../../../images/tree.jpg";
+const mongoose = require("mongoose");
 
 const useStyles = makeStyles({
   root: {
@@ -24,6 +25,36 @@ const useStyles = makeStyles({
 
 export default function JournalCard() {
   const classes = useStyles();
+
+  const journalEntries = {
+    feelings: "",
+    gratitude: "",
+    thoughts: "",
+  }
+
+  function postEntries(){
+    const [feelings, setFeelings] = useState()
+    const [gratitude, setGratitide] = useState()
+    const [thoughts, setThoughts] = useState()
+
+    const handleSubmit = () =>{
+      
+    }
+
+   // db.journals.create
+
+    app.post("/addJournal", (req, res) => {
+      var journalData = new Journal(req.body);
+      journalData.save()
+      .then(item => {
+      res.send("item saved to database");
+      })
+      .catch(err => {
+      res.status(400).send("unable to save to database");
+      });
+     });
+
+  }
 
   return (
     <div>
@@ -115,3 +146,5 @@ export default function JournalCard() {
     </div>
   );
 }
+
+
