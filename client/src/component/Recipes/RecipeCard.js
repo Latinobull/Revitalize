@@ -10,7 +10,6 @@ import CardActions from "@material-ui/core/CardActions";
 import Collapse from "@material-ui/core/Collapse";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
-import green from '@material-ui/core/colors/green'
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import NearMeIcon from "@material-ui/icons/NearMe";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
@@ -36,19 +35,19 @@ const useStyles = makeStyles((theme) => ({
   expandOpen: {
     transform: "rotate(180deg)",
   },
-  avatar: {
-    backgroundColor: green
-  },
 }));
 
 
 export default function RecipeReviewCard({ recipe, handleSave }) {
+  
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
+
+ 
   const kalories = Math.round(recipe.recipe.calories) + " " + "Calories"
   return (
     <Card className={classes.root}>
@@ -73,7 +72,7 @@ export default function RecipeReviewCard({ recipe, handleSave }) {
         ></Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton onClick={handleSave}varia-label="add to favorites">
+        <IconButton onClick={handleSave} varia-label="add to favorites">
           <FavoriteIcon />
         </IconButton>
         <IconButton href= {recipe.recipe.url}>

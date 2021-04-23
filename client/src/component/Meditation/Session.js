@@ -1,10 +1,11 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import ProgressBar from "./Progressbar";
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import AccessAlarmIcon from '@material-ui/icons/AccessAlarm';
 import "./style.css"
 import Grid from '@material-ui/core/Grid';
+
 
 
 
@@ -18,9 +19,26 @@ function Session(){
     const [seconds, setSeconds] = useState(0);
     const classes = useStyles();
 
+    const [secondsValue, setSecondsValue]= useState(0)
+    const [minsValue, setMinsValue]= useState(0)
+    // const [seconds, setSeconds] = useState(props.seconds)
+  
+    useEffect(()=>{
+      const interval = setInterval(() => {
+        if (seconds == 0) return 
+        if (seconds > 0){
+          setSeconds(seconds => seconds -1)
+          setSecondsValue(seconds % 60)
+          setMinsValue(Math.floor(seconds / 60))
+        }
+      }, 1000)
+    
+      return () => clearInterval(interval)
+        }, [seconds])
+console.log(seconds)
     return(
         <div classname= "sessionopt">
-<ProgressBar seconds={seconds}/>
+<ProgressBar seconds={seconds} secondsValue={secondsValue} minsValue={minsValue}/>
 <Grid   className="btngrp"
   container
   direction="row"
