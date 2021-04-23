@@ -56,14 +56,17 @@ export default function Main_Page() {
         <Grid item xs={12} className={classes.header}>
           {console.log(currentUser)}
           {currentUser.displayName ? (
-            <div>
-              <h4>Ready to reinvent how your everyday life</h4>
-              <h6>Welcome Back {userDisplay}</h6>
-            </div>
+            <Typography align="center" variant="h3">
+              Welcome back {userDisplay}, Choose where you want to go!
+            </Typography>
           ) : (
             <div>
-              <h1>Ready to reinvent how your everyday life</h1>
-              <h6>Welcome new User, change your display name down below!</h6>
+              <Typography align="center" variant="h3">
+                Welcome new user, Choose where you want to go!
+              </Typography>
+              <Typography align="center" variant="h6">
+                Change your display name
+              </Typography>
             </div>
           )}
         </Grid>
