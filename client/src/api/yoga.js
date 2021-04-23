@@ -1,6 +1,6 @@
 //Authenication key to gain access to Youtube
 
-var youtube_Key = "AIzaSyD2M93FGbul72E4O3Fnu4rzh6QFmA106E4";
+var youtube_Key = process.env.REACT_APP_YOUTUBE_KEY;
 
 // Access to the json yoga API
 function listOfAllYogaPoses(){
