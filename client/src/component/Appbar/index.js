@@ -39,7 +39,7 @@ export default function Appbar() {
 
   console.log(currentUser);
   const handleChange = () => {
-    if (currentUser && Login) {
+    if (auth == false && currentUser) {
       setAuth(true);
     } else {
       history.push('/login');
