@@ -83,7 +83,7 @@ export default function Main_Page() {
                 <CardMedia
                   component="img"
                   alt="Physical Health"
-                  height="450"
+                  height="350"
                   image={Physical}
                   title="Physical Health"
                 />
@@ -114,7 +114,7 @@ export default function Main_Page() {
                 <CardMedia
                   component="img"
                   alt="Mental Health"
-                  height="450"
+                  height="350"
                   image={Mental}
                   title="Mental Health"
                 />
@@ -145,7 +145,7 @@ export default function Main_Page() {
                 <CardMedia
                   component="img"
                   alt="Chat"
-                  height="450"
+                  height="350"
                   image={Chat}
                   title="Chat"
                 />
