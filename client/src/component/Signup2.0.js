@@ -18,7 +18,7 @@ import Logo from '../assets/images/Main-Page-Photos/Revitalize-Logo.png';
 const useStyle = makeStyles(theme => ({
   root: {
     height: '100vh',
-    backgroundColor: '#f5cac2',
+    backgroundColor: '#F7E6E3',
   },
   image: {
     backgroundImage: `url(${Logo} )`,
