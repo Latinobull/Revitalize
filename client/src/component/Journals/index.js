@@ -1,24 +1,20 @@
 import React from 'react';
 import JournalMenu from "./JournalMenu";
-import JournalGrid from "./JournalGrid";
-import SubmitButton from './SubmitButton';
-import Appbar from '../Appbar/index';
+import JournalCard from "./Card/index";
+import Banner from "./Banner/index";
+import InspireButton from "./Banner/Button";
 
 
 function Journals() {
   return (
     <>
-   <Appbar>
-   </Appbar>
+   <Banner/>
+   <InspireButton/>
+   
+   <JournalMenu/>
 
-   <JournalMenu>
-   </JournalMenu>
+   <JournalCard/>
 
-   <JournalGrid>
-   </JournalGrid>
-
-   <SubmitButton>
-   </SubmitButton>
   </>
   );
 }

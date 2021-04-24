@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
+import DatePicker from '../DatePicker/index';
 
 export default function JournalMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -17,7 +17,7 @@ export default function JournalMenu() {
   return (
     <div>
       <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
-        Open Menu
+        View Past Entries
       </Button>
       <Menu
         id="simple-menu"
@@ -26,8 +26,7 @@ export default function JournalMenu() {
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        <MenuItem onClick={handleClose}>Read Previous Entries</MenuItem>
-        <MenuItem onClick={handleClose}>Random Inspiration</MenuItem>
+        <DatePicker/>
       </Menu>
     </div>
   );

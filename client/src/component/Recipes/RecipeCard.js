@@ -10,12 +10,12 @@ import CardActions from "@material-ui/core/CardActions";
 import Collapse from "@material-ui/core/Collapse";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
-import green from '@material-ui/core/colors/green'
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import NearMeIcon from "@material-ui/icons/NearMe";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { v4 as uuidv4 } from "uuid";
 import "./style.css";
+// import Background from "../../assets/images/recipes.PNG";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -36,21 +36,22 @@ const useStyles = makeStyles((theme) => ({
   expandOpen: {
     transform: "rotate(180deg)",
   },
-  avatar: {
-    backgroundColor: green
-  },
 }));
 
 
-export default function RecipeReviewCard() {
+export default function RecipeReviewCard({ recipe, handleSave }) {
+  
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
-  const kalories = Math.round(recipe.recipe.calories) + " " + "Calories"
+
+ 
+  const kalories = Math.round(recipe.recipe.calories) + "" + "Calories"
   return (
+    <div>
     <Card className={classes.root}>
       <CardHeader
         action={
@@ -73,7 +74,7 @@ export default function RecipeReviewCard() {
         ></Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton onClick={handleSave}varia-label="add to favorites">
+        <IconButton onClick={handleSave} varia-label="add to favorites">
           <FavoriteIcon />
         </IconButton>
         <IconButton href= {recipe.recipe.url}>
@@ -113,5 +114,6 @@ export default function RecipeReviewCard() {
         </CardContent>
       </Collapse>
     </Card>
+    </div>
   );
 }

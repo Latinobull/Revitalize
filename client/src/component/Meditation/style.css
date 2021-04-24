@@ -1,0 +1,212 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+ }
+
+ body{
+    background-attachment:fixed;
+    background-position: center;
+    background-size: 100%;   
+    color: rgb(0, 0, 0);
+    position:sticky;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+ }
+ .post-wrap {
+    width: 320px;
+    height: 300px;
+    perspective: 1000px;
+ }
+ .post {
+    position: relative; /* Required to absolutely position the child faces */
+    width: 100%;
+    height: 100%;
+    margin-top: 20px;
+ }
+
+ .post-front, .post-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin-top: 20px;
+ }
+
+ .post-back {
+    transform: rotateY(180deg);
+    color: black;
+ }
+
+ .post-front, .post-back {
+    /* Existing styles here */
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+ }
+
+ .post-wrap:hover .post {
+    transform: rotateY(180deg);
+ }
+
+ .post {
+    /* Existing styles here */
+    transition: transform 1s;
+    transform-style: preserve-3d;   
+ }
+
+ .post-img {
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+ }
+ .post-info {
+    padding: 20px 30px 30px;
+ }
+ .post-info span {
+    font-size: 0.8rem;
+    color: #808080;
+ }
+ .post-info h2{
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding-top: 5px;
+ }
+
+ 	
+.post-back {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* To push the read more button to bottom */
+    align-items: flex-start; /* To position the read more button at the left */
+ }
+ .post-back h2{
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding-top: 5px;
+ }
+ .post-back p {
+    margin-top: 10px;
+    line-height: 1.6;
+ }
+ .post-back a{
+    text-decoration: none;
+    color: #ffffff;
+    background-color: black;
+    padding: 10px 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.8em;
+    font-weight: bold;
+ }
+
+ .container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 60px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Required to position the posts one below the other on smaller devices */
+ }
+ .post-wrap {
+    /* Existing styles here */
+    flex: 1;
+    margin: 0 15px 30px;
+ }
+
+ .post-wrap {
+    /* Existing styles here */
+    min-width: 300px;
+    max-width: 380px;
+ }
+
+.benefits{
+    text-align: center;
+}
+ #post-img1{
+     background-image: url("../../assets/images/stress.jpeg");
+ }
+ #post-img2{
+    background-image: url("../../assets/images/anxiety.jpeg");
+    background-size: 130%;
+}
+
+.practice{
+   display: block;
+   border-radius: 100px;
+   -webkit-border-radius: 100px;
+   -moz-border-radius: 100px; 
+   width: 200px;
+   height: 200px;
+   margin-left: 50px;
+   margin-right: 50px;
+}
+h3{
+   margin-left: 50px;
+   margin-right: 50px;
+}
+.sessionopt{
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%, -40%);
+  
+
+}
+
+.btngrp{
+   position:absolute;
+   left: 50%;
+   top: 90%;
+   transform: translate(-50%, -60%);
+   padding: 10px;
+}
+
+
+.forestSound, .rainSound, .birdSound {
+   background: #222;
+   height: 50px;
+   min-width: 100px;
+   border: none;
+   border-radius: 10px;
+   color: #eee;
+   font-size: 16px;
+   font-family: 'Cookie', cursive;
+   position: relative;
+   transition: 1s;
+   -webkit-tap-highlight-color: transparent;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   cursor: pointer;
+   padding-top: 5px;
+   margin-top: 10px;
+   margin-right: 10px;
+}
+
+.custom-jumbotron{
+   width: 50%;
+   margin: auto;
+   margin-top: -50px;
+   font-family: 'Cookie', cursive;
+}
+@media (min-resolution: 144dpi) {
+   .progressBar {
+    position: absolute;
+    left: 20px; 
+    top: 20px;
+    }
+  }
+  
+  @media (min-resolution: 96dpi) {
+   .progressBar {
+    position: absolute;
+    left: 10px; 
+    top: 10px;
+    }
+  }
+

@@ -4,6 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 import RecipeReviewCard from "./RecipeCard.js";
 import axios from "axios";
 import { Grid } from "@material-ui/core";
+import "./style.css";
 
 
 function Recipes() {
@@ -38,7 +39,6 @@ function Recipes() {
 >
       {recipes.map((recipe) => {
         console.log(recipe);
-        // const randomNumber = Math.floor(Math.random() * 100) + 1{randomNumber + Math.floor(recipe.calories)}
         return <RecipeReviewCard onClick={handleSave} recipe={recipe} key={uuidv4()} />;
       })}
       </Grid>
