@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { useAuth } from '../Authenticate/AuthContext';
 import { Link, useHistory } from 'react-router-dom';
+
 import {
   CssBaseline,
   Grid,
@@ -45,6 +46,7 @@ const useStyle = makeStyles(theme => ({
     backgroundColor: '#303179',
   },
 }));
+
 export default function Signup() {
   const emailRef = useRef();
   const passwordRef = useRef();

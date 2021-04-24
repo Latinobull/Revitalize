@@ -11,12 +11,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SubmitButton() {
+export default function SubmitButton(props) {
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
-      <Button variant="contained" color="primary">
+      <Button onClick={()=>props.handleSubmit()} id="submitB" variant="contained" color="primary">
         Submit Journal Entry
       </Button>
     </div>
@@ -24,17 +24,3 @@ export default function SubmitButton() {
 }
 
 
-// const express = require('express');
-// const router = express.Router();
-// const mongodb = require('mongodb').MongoClient;
-
-// router.post('/insert', function(req, res) {
-//   let journalEntry = {
-//     feelings: req.body.feelings,
-//     gratitude: req.body.gratitude,
-//     thoughts: req.body.thoughts
-//   };
-
-//   function handleSubmit(){
-
-//   }

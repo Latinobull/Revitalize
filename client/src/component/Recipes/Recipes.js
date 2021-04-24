@@ -4,6 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 import RecipeReviewCard from "./RecipeCard.js";
 import axios from "axios";
 import { Grid } from "@material-ui/core";
+import "./style.css";
 
 
 function Recipes() {

@@ -1,28 +1,20 @@
 import React from 'react';
 import JournalMenu from "./JournalMenu";
 import JournalCard from "./Card/index";
-import SubmitButton from './SubmitButton';
 import Banner from "./Banner/index";
+import InspireButton from "./Banner/Button";
 
 
 function Journals() {
   return (
     <>
-   <Banner>
-   </Banner>
+   <Banner/>
+   <InspireButton/>
    
-   <JournalMenu>
-   </JournalMenu>
+   <JournalMenu/>
 
+   <JournalCard/>
 
-
-   <JournalCard>
-   </JournalCard>
-
- 
-
-   <SubmitButton>
-   </SubmitButton>
   </>
   );
 }
