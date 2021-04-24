@@ -25,6 +25,9 @@ const useStyles = makeStyles(theme => ({
   title: {
     flexGrow: 1,
   },
+  main: {
+    backgroundColor: '#303179',
+  },
 }));
 
 export default function Appbar() {
@@ -36,7 +39,6 @@ export default function Appbar() {
   const open = Boolean(anchorEl);
   const { currentUser, Logout } = useAuth();
   const history = useHistory();
-  const [error, setError] = useState();
 
   console.log(currentUser);
 
@@ -73,7 +75,7 @@ export default function Appbar() {
   return (
     <div className={classes.root}>
       <FormGroup></FormGroup>
-      <AppBar position="static">
+      <AppBar position="static" className={classes.main}>
         <Toolbar>
           <IconButton
             edge="start"
