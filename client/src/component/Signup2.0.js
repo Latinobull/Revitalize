@@ -12,13 +12,15 @@ import {
   Button,
 } from '@material-ui/core';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
+import Logo from '../assets/images/Main-Page-Photos/Revitalize-Logo.png';
+
 const useStyle = makeStyles(theme => ({
   root: {
     height: '100vh',
     backgroundColor: '#f5cac2',
   },
   image: {
-    backgroundImage: 'url(https://source.unsplash.com/random)',
+    backgroundImage: `url(${Logo} )`,
     backgroundRepeat: 'no-repeat',
     backgroundColor: '#303179',
     backgroundSize: 'cover',
