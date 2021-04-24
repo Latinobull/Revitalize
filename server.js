@@ -21,6 +21,7 @@ if (process.env.NODE_ENV === 'production') {
 //   req.body
 // });
 
+app.use(express.json())
 app.use(routes);
 
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/journals', {
