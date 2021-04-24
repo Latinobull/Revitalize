@@ -83,7 +83,7 @@ export default function Main_Page() {
                 <CardMedia
                   component="img"
                   alt="Physical Health"
-                  height="350"
+                  height="450"
                   image={Physical}
                   title="Physical Health"
                 />
@@ -114,7 +114,7 @@ export default function Main_Page() {
                 <CardMedia
                   component="img"
                   alt="Mental Health"
-                  height="350"
+                  height="450"
                   image={Mental}
                   title="Mental Health"
                 />
@@ -145,7 +145,7 @@ export default function Main_Page() {
                 <CardMedia
                   component="img"
                   alt="Chat"
-                  height="350"
+                  height="450"
                   image={Chat}
                   title="Chat"
                 />
@@ -172,9 +172,6 @@ export default function Main_Page() {
           </Grid>
         </Grid>
       </div>
-      <button onClick={handleLogut}>Log Out</button>
-      <br />
-      {error && <h5>{error}</h5>}
     </div>
   );
 }
