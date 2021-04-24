@@ -8,7 +8,13 @@ export default function displayJournal() {
 
     return (
       <div>
-         <h1>test</h1>
+         <h6>Feelings:</h6>
+         <h6>Gratitude:</h6>
+         <h6>Thoughts:</h6>
+         
+         {/* <h6>Feelings: {data.feelings}</h6>
+         <h6>Gratitude: {data.gratitude}</h6>
+         <h6>Thoughts: {data.thoughts}</h6> */}
       </div>
     );
   }
