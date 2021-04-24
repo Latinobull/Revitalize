@@ -20,8 +20,7 @@ export default function Profile() {
       console.log('image:' + file);
     });
   };
-  async function handleSubmit(e) {
-    e.preventDefault();
+  async function handleSubmit() {
     try {
       setError('');
       await firebase

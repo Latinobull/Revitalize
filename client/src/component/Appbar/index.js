@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -11,7 +11,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormGroup from '@material-ui/core/FormGroup';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
-import { Link } from '@material-ui/core';
+import { Avatar, Link } from '@material-ui/core';
 import { useAuth } from '../../Authenticate/AuthContext';
 import { useHistory } from 'react-router';
 
@@ -24,6 +24,9 @@ const useStyles = makeStyles(theme => ({
   },
   title: {
     flexGrow: 1,
+  },
+  main: {
+    backgroundColor: '#303179',
   },
 }));
 
@@ -38,15 +41,16 @@ export default function Appbar() {
   const history = useHistory();
 
   console.log(currentUser);
+
   const handleChange = () => {
-    if (auth == false && currentUser) {
-      setAuth(true);
-    } else {
+    if (!currentUser) {
       history.push('/login');
       setAuth(false);
+    } else {
+      setAuth(true);
     }
 
-    if (auth == true) {
+    if (currentUser && auth == true) {
       setAuth(false);
       return Logout();
     }
@@ -71,7 +75,7 @@ export default function Appbar() {
   return (
     <div className={classes.root}>
       <FormGroup></FormGroup>
-      <AppBar position="static">
+      <AppBar position="static" className={classes.main}>
         <Toolbar>
           <IconButton
             edge="start"
@@ -141,7 +145,11 @@ export default function Appbar() {
                 onClick={handleMenu}
                 color="inherit"
               >
-                <AccountCircle />
+                {currentUser.photoUrl == null ? (
+                  <AccountCircle />
+                ) : (
+                  <Avatar src={currentUser.photoUrl}></Avatar>
+                )}
               </IconButton>
               <Menu
                 id="menu-appbar"

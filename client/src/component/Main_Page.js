@@ -14,6 +14,9 @@ import {
   makeStyles,
   Typography,
 } from '@material-ui/core';
+import Physical from '../assets/images/Main-Page-Photos/Physical.jpg';
+import Mental from '../assets/images/Main-Page-Photos/Mental.jpg';
+import Chat from '../assets/images/Main-Page-Photos/Chat.png';
 const useStyles = makeStyles({
   root: {
     marginLeft: 20,
@@ -80,8 +83,8 @@ export default function Main_Page() {
                 <CardMedia
                   component="img"
                   alt="Physical Health"
-                  height="200"
-                  image=""
+                  height="450"
+                  image={Physical}
                   title="Physical Health"
                 />
                 <CardContent>
@@ -111,8 +114,8 @@ export default function Main_Page() {
                 <CardMedia
                   component="img"
                   alt="Mental Health"
-                  height="200"
-                  image=""
+                  height="450"
+                  image={Mental}
                   title="Mental Health"
                 />
                 <CardContent>
@@ -141,10 +144,10 @@ export default function Main_Page() {
               <CardActionArea>
                 <CardMedia
                   component="img"
-                  alt="Mental Health"
-                  height="200"
-                  image=""
-                  title="Mental Health"
+                  alt="Chat"
+                  height="450"
+                  image={Chat}
+                  title="Chat"
                 />
                 <CardContent>
                   <Typography
@@ -153,7 +156,7 @@ export default function Main_Page() {
                     compoenent="h2"
                     align="center"
                   >
-                    Mental Health
+                    Chat
                   </Typography>
                 </CardContent>
               </CardActionArea>
@@ -169,9 +172,6 @@ export default function Main_Page() {
           </Grid>
         </Grid>
       </div>
-      <button onClick={handleLogut}>Log Out</button>
-      <br />
-      {error && <h5>{error}</h5>}
     </div>
   );
 }
