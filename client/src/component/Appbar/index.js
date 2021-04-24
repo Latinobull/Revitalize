@@ -11,7 +11,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormGroup from '@material-ui/core/FormGroup';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
-import { Link } from '@material-ui/core';
+import { Avatar, Link } from '@material-ui/core';
 import { useAuth } from '../../Authenticate/AuthContext';
 import { useHistory } from 'react-router';
 
@@ -143,7 +143,11 @@ export default function Appbar() {
                 onClick={handleMenu}
                 color="inherit"
               >
-                <AccountCircle />
+                {currentUser.photoUrl == null ? (
+                  <AccountCircle />
+                ) : (
+                  <Avatar src={currentUser.photoUrl}></Avatar>
+                )}
               </IconButton>
               <Menu
                 id="menu-appbar"
