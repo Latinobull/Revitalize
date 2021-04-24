@@ -8,7 +8,6 @@ import {
   Avatar,
   Button,
   Divider,
-  Fab,
   Grid,
   List,
   ListItem,

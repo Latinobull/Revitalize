@@ -11,10 +11,17 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormGroup from '@material-ui/core/FormGroup';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
+import { Link } from '@material-ui/core';
+import { useAuth } from '../../Authenticate/AuthContext';
+import { useHistory } from 'react-router';
 
+<<<<<<< HEAD
 
 
 const useStyles = makeStyles((theme) => ({
+=======
+const useStyles = makeStyles(theme => ({
+>>>>>>> ba0f7b0694c5999012ee460711449cff4cb9b5a3
   root: {
     flexGrow: 1,
   },
@@ -28,15 +35,30 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Appbar() {
   const classes = useStyles();
-  const [auth, setAuth] = React.useState(true);
+  const [auth, setAuth] = React.useState(null);
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const [anchorElHome, setAnchorElHome] = React.useState(null);
+  const openHome = Boolean(anchorElHome);
   const open = Boolean(anchorEl);
+  const { currentUser, Logout } = useAuth();
+  const history = useHistory();
 
-  const handleChange = (event) => {
-    setAuth(event.target.checked);
+  console.log(currentUser);
+  const handleChange = () => {
+    if (auth == false && currentUser) {
+      setAuth(true);
+    } else {
+      history.push('/login');
+      setAuth(false);
+    }
+
+    if (auth == true) {
+      setAuth(false);
+      return Logout();
+    }
   };
 
-  const handleMenu = (event) => {
+  const handleMenu = event => {
     setAnchorEl(event.currentTarget);
   };
 
@@ -44,22 +66,78 @@ export default function Appbar() {
     setAnchorEl(null);
   };
 
+  const handleMenuHome = event => {
+    setAnchorElHome(event.currentTarget);
+  };
+
+  const handleCloseHome = () => {
+    setAnchorElHome(null);
+  };
+
   return (
     <div className={classes.root}>
-      <FormGroup>
-      </FormGroup>
+      <FormGroup></FormGroup>
       <AppBar position="static">
         <Toolbar>
-          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+          <IconButton
+            edge="start"
+            className={classes.menuButton}
+            color="inherit"
+            onClick={handleMenuHome}
+            aria-label="menu"
+          >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" className={classes.title}>
+          <Menu
+            id="menu-appbar"
+            anchorEl={anchorElHome}
+            anchorOrigin={{
+              vertical: 'top',
+              horizontal: 'right',
+            }}
+            keepMounted
+            transformOrigin={{
+              vertical: 'top',
+              horizontal: 'right',
+            }}
+            open={openHome}
+            onClose={handleCloseHome}
+          >
+            <MenuItem onClick={handleCloseHome}>
+              <Link href="/" color="inherit">
+                Home
+              </Link>
+            </MenuItem>
+            <MenuItem onClick={handleCloseHome}>
+              <Link href="/chat" color="inherit">
+                Chat
+              </Link>
+            </MenuItem>
+            <MenuItem onClick={handleCloseHome}>
+              <Link href="/physical" color="inherit">
+                Physical Health
+              </Link>
+            </MenuItem>
+            <MenuItem onClick={handleCloseHome}>
+              <Link href="/mental" color="inherit">
+                Mental Health
+              </Link>
+            </MenuItem>
+          </Menu>
+
+          <Typography variant="h4" className={classes.title} align="center">
             Revitalize
           </Typography>
           <FormControlLabel
-          control={<Switch checked={auth} onChange={handleChange} aria-label="login switch" />}
-          label={auth ? 'Logout' : 'Login'}
-        />
+            control={
+              <Switch
+                checked={auth}
+                onChange={handleChange}
+                aria-label="login switch"
+              />
+            }
+            label={auth ? 'Logout' : 'Login'}
+          />
           {auth && (
             <div>
               <IconButton
@@ -86,8 +164,14 @@ export default function Appbar() {
                 open={open}
                 onClose={handleClose}
               >
+<<<<<<< HEAD
                 <MenuItem onClick={handleClose}>Profile</MenuItem>
                 <MenuItem onClick={handleClose}>My Account</MenuItem>
+=======
+                <MenuItem onClick={handleClose}>
+                  <Link href="/profile/:uid">My Account</Link>
+                </MenuItem>
+>>>>>>> ba0f7b0694c5999012ee460711449cff4cb9b5a3
               </Menu>
             </div>
           )}
