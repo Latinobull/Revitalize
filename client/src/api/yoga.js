@@ -1,4 +1,4 @@
-/Authenication key to gain access to Youtube
+// /Authenication key to gain access to Youtube
 
 var youtube_Key = process.env.REACT_APP_YOUTUBE_KEY;
 
@@ -19,7 +19,6 @@ function listOfAllYogaPoses(){
 function callYoutubeAPI(valueSelected){
   fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=how+to+do+${valueSelected}+yoga+pose&maxResults=1&&safeSearch=moderate&key=${youtube_Key}`)
   .then(youtubeResult =>
-  console.log(newResult)
     youtubeResult.json())
   .then(youtubeResult => {
     displayOtherResults(youtubeResult.items[0]);
@@ -100,4 +99,4 @@ function displayOtherResults(video){
 function init() {
 	listOfAllYogaPoses();
 
-
+}

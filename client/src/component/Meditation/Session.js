@@ -5,6 +5,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import AccessAlarmIcon from '@material-ui/icons/AccessAlarm';
 import "./style.css"
 import Grid from '@material-ui/core/Grid';
+import Background from "../../assets/images/breathe.PNG";
 
 
 
@@ -28,7 +29,7 @@ function Session(){
         if (seconds === 0) return 
         if (seconds > 0){ // when it gets to 0, it doesn't go to 0 it stays at 1 sec remaining
           setSeconds(seconds => seconds -1)
-          setSecondsValue(seconds % 60 -1)
+          setSecondsValue(seconds % 60)
           setMinsValue(Math.floor(seconds / 60))
         }
       }, 1000)
@@ -37,7 +38,7 @@ function Session(){
         }, [seconds])
 console.log(seconds)
     return(
-        <div classname= "sessionopt">
+        <div classname= "sessionopt" style={{backgroundImage: "url(" + { Background } + ")"}}>
 <ProgressBar seconds={seconds} secondsValue={secondsValue} minsValue={minsValue}/>
 <Grid   className="btngrp"
   container

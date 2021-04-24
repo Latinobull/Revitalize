@@ -1,11 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
-body{
-  background-repeat: no-repeat;
-  background-size:cover;
-  font-family: 'Open Sans', sans-serif;
-}
-
 .search {
   width: 100%;
   position: relative;
@@ -14,24 +8,24 @@ body{
 
 .searchTerm {
   width: 100%;
-  border: 3px solid #183a1d;
+  border: 3px solid #9b613f;
   border-right: none;
   padding: 5px;
   height: 36px;
   border-radius: 5px 0 0 5px;
   outline: none;
-  color: #9DBFAF;
+  color: #5b2506;
 }
 
 .searchTerm:focus{
-  color: #183a1d;
+  color: #9b613f;
 }
 
 .searchButton {
   width: 40px;
   height: 36px;
-  border: 1px solid #183a1d;
-  background: #183a1d;
+  border: 3px solid #9b613f;
+  background: #9b613f;
   text-align: center;
   color: white;
   border-radius: 0 5px 5px 0;
@@ -53,9 +47,12 @@ body{
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	color: #183a1d;
+	color: #9b613f;
   }
 
   #healthLabel{
     margin: 5px;
+  }
+  .ugh{
+    background-image: url("../../assets/images/recipes.PNG");
   }

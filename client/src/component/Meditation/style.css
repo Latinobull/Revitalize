@@ -4,15 +4,13 @@
     box-sizing: border-box;
  }
 
-body{
-    /* background-image: url("../../assets/images/chakras.png"); */
-    background-repeat:no-repeat;
-    background-attachment: fixed;
+ body{
+    background-image: url("../../assets/images/breathe.PNG"); 
+    background-attachment:fixed;
     background-position: center;
-    font-size: 1rem;    
+    background-size: 100%;   
     color: rgb(0, 0, 0);
-    position:static;    
-    background-size:auto;
+    position:sticky;
 }
 
 html, body {
@@ -163,4 +161,8 @@ html, body {
    top: 90%;
    transform: translate(-50%, -50%);
    padding: 10px;
+}
+
+.sessionopt{
+   background-image: url("../../assets/images/breathe.PNG");
 }
