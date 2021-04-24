@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { useAuth } from '../Authenticate/AuthContext';
 import { Link, useHistory } from 'react-router-dom';
+
 export default function Signup() {
   const emailRef = useRef();
   const passwordRef = useRef();
