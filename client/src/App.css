@@ -19,11 +19,15 @@
 }
 
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
-body{
+body {
   /* background-image: url("./assets/images/opt2.PNG"); */
   background-attachment: fixed;
   background-color: #fae5df;
