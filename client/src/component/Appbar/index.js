@@ -15,13 +15,7 @@ import { Link } from '@material-ui/core';
 import { useAuth } from '../../Authenticate/AuthContext';
 import { useHistory } from 'react-router';
 
-<<<<<<< HEAD
-
-
-const useStyles = makeStyles((theme) => ({
-=======
 const useStyles = makeStyles(theme => ({
->>>>>>> ba0f7b0694c5999012ee460711449cff4cb9b5a3
   root: {
     flexGrow: 1,
   },
@@ -164,14 +158,9 @@ export default function Appbar() {
                 open={open}
                 onClose={handleClose}
               >
-<<<<<<< HEAD
-                <MenuItem onClick={handleClose}>Profile</MenuItem>
-                <MenuItem onClick={handleClose}>My Account</MenuItem>
-=======
                 <MenuItem onClick={handleClose}>
                   <Link href="/profile/:uid">My Account</Link>
                 </MenuItem>
->>>>>>> ba0f7b0694c5999012ee460711449cff4cb9b5a3
               </Menu>
             </div>
           )}

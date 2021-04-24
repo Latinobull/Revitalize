@@ -38,7 +38,6 @@ html, body {
 
  .post-back {
     transform: rotateY(180deg);
-    /* background-color: white; */
     color: black;
  }
 
