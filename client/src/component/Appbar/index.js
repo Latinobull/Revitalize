@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -36,17 +36,19 @@ export default function Appbar() {
   const open = Boolean(anchorEl);
   const { currentUser, Logout } = useAuth();
   const history = useHistory();
+  const [error, setError] = useState();
 
   console.log(currentUser);
+
   const handleChange = () => {
-    if (auth == false && currentUser) {
-      setAuth(true);
-    } else {
+    if (!currentUser) {
       history.push('/login');
       setAuth(false);
+    } else {
+      setAuth(true);
     }
 
-    if (auth == true) {
+    if (currentUser && auth == true) {
       setAuth(false);
       return Logout();
     }
