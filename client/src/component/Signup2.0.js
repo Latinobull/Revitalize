@@ -64,7 +64,8 @@ export default function Signup() {
       setLoading(true);
       await Signup(emailRef.current.value, passwordRef.current.value);
       history.push('/');
-    } catch {
+    } catch (err) {
+      console.log(err);
       setError('Failed to set up Account. Please Try Again');
     }
     setLoading(false);
@@ -89,10 +90,11 @@ export default function Signup() {
               margin="normal"
               fullWidth
               label="Email Address"
+              type="email"
               name="Email"
               placeholder="Email"
               autoComplete="email"
-              ref={emailRef}
+              inputRef={emailRef}
               required
             />
 
@@ -104,7 +106,7 @@ export default function Signup() {
               name="Password"
               label="Password"
               placeholder="Password"
-              ref={passwordRef}
+              inputRef={passwordRef}
               required
             />
 
@@ -116,7 +118,7 @@ export default function Signup() {
               name="PasswordConfirm"
               label="PasswordConfirmation"
               placeholder="Password"
-              ref={passwordConfirmRef}
+              inputRef={passwordConfirmRef}
               required
             />
 
