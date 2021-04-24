@@ -15,7 +15,9 @@ export default function InspireButton() {
 
   return (
     <div className={classes.root}>
-      <Button variant="outlined">More Inspiration?</Button>
+      <Button variant="outlined">More Inspiration?
+      
+      </Button>
     </div>
   );
 }

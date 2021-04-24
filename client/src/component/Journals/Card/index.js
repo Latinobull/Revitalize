@@ -41,8 +41,7 @@ function JournalCard() {
     };
     console.log(journalEntries);
 
- //axios.post("api/journals", journalData)
- //db.create?
+ axios.post("api/journals", journalEntries)
   };
 
   return (
