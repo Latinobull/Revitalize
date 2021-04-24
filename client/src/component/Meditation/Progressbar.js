@@ -6,13 +6,13 @@ import "./style.css";
 
 function ProgressBar (props){
 
-   console.log(props)
+   console.log(props.seconds)
 
 return (
   
 
     <div className="sessionopt" style={{ width: 200, height: 200}}>      
-    <CircularProgressbar initialAnimation={true} onClick={props.value} value= {props.seconds} maxValue={60} text={`${props.minsValue} : ${props.secondsValue}`} 
+    <CircularProgressbar className="progressBar" initialAnimation={true} onClick={props.value} value= {props.seconds} maxValue={props.maxValue} text={`${props.minsValue} : ${props.secondsValue}`} 
     //looks like i need to be able to pass in multiple max values in order for the progress bar to actually move, but how?
    
    styles={buildStyles({
@@ -33,9 +33,10 @@ return (
     pathTransition: 'stroke-dashoffset 0.5s ease 0s',
 
     // Colors
-    pathColor: `#b08968, ${props.seconds})`,
-    textColor: '#000000',
-    trailColor: '#5b2506',
+    pathColor: `rgba(62, 152, 199, ${props.seconds})`,
+    textColor: '#f88',
+    trailColor: '#d6d6d6',
+    backgroundColor: '#3e98c7',
   })}/>
     </div>
 )
