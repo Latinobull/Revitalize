@@ -3,7 +3,7 @@ import { useAuth } from '../Authenticate/AuthContext';
 import firebase from 'firebase/app';
 import '@firebase/storage';
 import app from '../firebase';
-export default function Profile({}) {
+export default function Profile() {
   const [error, setError] = useState('');
   const displayNameRef = useRef();
   const { currentUser } = useAuth();
@@ -15,9 +15,13 @@ export default function Profile({}) {
       .storage()
       .ref('users/' + currentUser.uid + '/profile.jpg');
     const fileRef = storageRef.child(file.name);
-    fileRef.put(file).then(() => {});
+    fileRef.put(file).then(() => {
+      //ASK TA WHY THIS HAS TO BE HERE
+      console.log('image:' + file);
+    });
   };
-  async function handleSubmit() {
+  async function handleSubmit(e) {
+    e.preventDefault();
     try {
       setError('');
       await firebase
@@ -38,6 +42,7 @@ export default function Profile({}) {
                 photoURL: imageURL,
               });
               console.log(imageURL);
+              file = currentUser.photoURL;
             });
         });
     } catch (err) {
