@@ -5,8 +5,9 @@ import { makeStyles } from "@material-ui/core/styles";
 import AccessAlarmIcon from "@material-ui/icons/AccessAlarm";
 import "./style.css";
 import Grid from "@material-ui/core/Grid";
-import Background from "../../assets/images/breathe.PNG";
 import PlaySound from "./Sounds";
+import Jumbotron from 'react-bootstrap/Jumbotron';
+import Container from 'react-bootstrap/Container'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -23,6 +24,8 @@ function Session() {
   const [minsValue, setMinsValue] = useState(0);
   // const [seconds, setSeconds] = useState(props.seconds)
 
+  const [maxSeconds, setMaxSeconds] = useState(0);
+
   useEffect(() => {
     const interval = setInterval(() => {
       if (seconds === 0) return;
@@ -37,15 +40,30 @@ function Session() {
     return () => clearInterval(interval);
   }, [seconds]);
   console.log(seconds);
+const handleClick= (time) =>{
+  setSeconds(time)
+  setMaxSeconds(time)
+}
+
   return (
     <div
       classname="sessionopt"
-      style={{ backgroundImage: "url(" + { Background } + ")" }}
     >
-      <ProgressBar
+      <Jumbotron fluid
+      className="custom-jumbotron">
+  <Container
+  justify="center">
+    <h1>Breathing Session</h1>
+    <p>
+    To live mindfully, the breath is the key. Breathe in, breathe out release the stress and let it all out. Choose the length of time below, for your session, and select a sound to set the mood. Remember, reamin in the present, and focus on your breathing! 
+    </p>
+  </Container>
+</Jumbotron>
+      <ProgressBar className="progressBar"
         seconds={seconds}
         secondsValue={secondsValue}
         minsValue={minsValue}
+        maxValue={maxSeconds}
       />
       <Grid
         className="btngrp"
@@ -55,7 +73,7 @@ function Session() {
         alignItems="center"
       >
         <Button
-          onClick={() => setSeconds(60)}
+          onClick={() => handleClick(60)}
           variant="contained"
           color="default"
           className={classes.button}
@@ -64,7 +82,7 @@ function Session() {
           1 min
         </Button>
         <Button
-          onClick={() => setSeconds(300)}
+          onClick={() => handleClick(300)}
           variant="contained"
           color="default"
           className={classes.button}
@@ -73,7 +91,7 @@ function Session() {
           5 mins
         </Button>
         <Button
-          onClick={() => setSeconds(600)}
+          onClick={() => handleClick(600)}
           variant="contained"
           color="default"
           className={classes.button}
@@ -82,7 +100,7 @@ function Session() {
           10 mins
         </Button>
         <Button
-          onClick={() => setSeconds(1200)}
+          onClick={() => handleClick(1200)}
           variant="contained"
           color="default"
           className={classes.button}
@@ -91,7 +109,15 @@ function Session() {
           20 mins
         </Button>
       </Grid>
+
+      <Grid 
+      container
+      direction="column"
+      justify="space-evenly"
+      alignItems="flex-end"
+      className="playsound">
       <PlaySound/>
+      </Grid>
     </div>
   );
 }

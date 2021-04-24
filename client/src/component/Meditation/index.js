@@ -33,7 +33,13 @@ function MeditationFacts() {
         <div>
             <h1 className="benefits">Benefits of Meditation</h1>
         
-            <Grid
+            {/* <Grid
+  container
+  direction="row"
+  justify="center"
+  alignItems="center"
+> */}
+          <Grid
   container
   direction="row"
   justify="center"
@@ -42,7 +48,7 @@ function MeditationFacts() {
 <div className="post-wrap"> 
        <div className="post"> 
            <div className="post-front">
-           <img src= {stressimg} alt="woman biting penci" className="practice"/>
+           <img src= {stressimg} alt="woman biting pencil" className="practice"/>
            <h3>Reduce Stress</h3>
            </div>
            <div className="post-back">
