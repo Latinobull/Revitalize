@@ -29,7 +29,7 @@ function Recipes() {
   };
 
   return (
-    <div className="ugh">
+    <div>
       <Searchbar handleSubmit={handleSubmit} handleTyping={handleTyping} />
       <Grid
   container

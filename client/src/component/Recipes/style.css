@@ -53,6 +53,6 @@
   #healthLabel{
     margin: 5px;
   }
-  .ugh{
-    background-image: url("../../assets/images/recipes.PNG");
+ body{
+    background-image: url("../../assets/images/recipes.PNG") !important;
   }

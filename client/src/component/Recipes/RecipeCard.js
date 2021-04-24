@@ -51,7 +51,7 @@ export default function RecipeReviewCard({ recipe, handleSave }) {
  
   const kalories = Math.round(recipe.recipe.calories) + "" + "Calories"
   return (
-    <div className="ugh">
+    <div>
     <Card className={classes.root}>
       <CardHeader
         action={

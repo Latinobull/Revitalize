@@ -5,7 +5,7 @@
  }
 
  body{
-    background-image: url("../../assets/images/breathe.PNG"); 
+    background-image: url("../../assets/images/breathe.PNG") !important;
     background-attachment:fixed;
     background-position: center;
     background-size: 100%;   

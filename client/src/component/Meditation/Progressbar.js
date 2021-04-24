@@ -11,7 +11,7 @@ return (
   
 
     <div className="sessionopt" style={{ width: 200, height: 200}}>      
-    <CircularProgressbar initialAnimation={true} onClick={props.value} maxValue={props.seconds} text={`${props.minsValue} : ${props.secondsValue}`} 
+    <CircularProgressbar initialAnimation={true} onClick={props.value} value={props.seconds} text={`${props.minsValue} : ${props.secondsValue}`} 
    
    styles={buildStyles({
     rotation: 0.25,
