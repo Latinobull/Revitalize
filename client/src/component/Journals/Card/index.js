@@ -13,7 +13,9 @@ import Wave from "../../../images/wave.jpg";
 import Bird from "../../../images/bird.jpg";
 import Tree from "../../../images/tree.jpg";
 import SubmitButton from "../SubmitButton";
+import axios from "axios";
 const mongoose = require("mongoose");
+const db = mongoose.connection;
 
 const useStyles = makeStyles({
   root: {
@@ -27,22 +29,20 @@ const useStyles = makeStyles({
 function JournalCard() {
   const classes = useStyles();
 
-
-
   const [feelings, setFeelings] = useState();
   const [gratitude, setGratitude] = useState();
   const [thoughts, setThoughts] = useState();
 
-
   const handleSubmit = () => {
     const journalEntries = {
-      feelings, 
+      feelings,
       gratitude,
       thoughts,
     };
-    console.log(journalEntries)
-  }
+    console.log(journalEntries);
 
+ axios.post("api/journals", journalEntries)
+  };
 
   return (
     <div>
@@ -136,12 +136,10 @@ function JournalCard() {
             </Button>
           </CardActions>
         </Card>
-        <SubmitButton
-        handleSubmit={handleSubmit}
-        />
+        <SubmitButton handleSubmit={handleSubmit} />
       </div>
     </div>
   );
 }
 
-export default JournalCard
+export default JournalCard;

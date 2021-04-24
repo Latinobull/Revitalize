@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import API from "../../../api/zenQuotes";
 import "./style.css";
 
+
 function Quote() {
   const [data, setData] = useState();
 
