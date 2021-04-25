@@ -13,6 +13,7 @@ import Chat from './component/Chat';
 import Profile from './component/Profile';
 import MeditationFacts from './component/Meditation';
 import Session from './component/Meditation/Session';
+import Yoga from "./component/Yoga/Yoga"
 
 class App extends Component {
   render() {
@@ -29,6 +30,7 @@ class App extends Component {
             <Route path="/meditation" component={MeditationFacts} />
             <Route path="/chat" component={Chat} />
             <Route path="/session" component={Session} />
+            <Route path="/yoga" component={Yoga} />
             <Route path="/Profile/:uid" component={Profile} />
           </Switch>
         </AuthProvider>

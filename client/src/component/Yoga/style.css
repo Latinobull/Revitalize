@@ -1,0 +1,25 @@
+
+.display-4 {
+    text-align: center;
+    font-weight: bold !important;
+  }
+  .jumbotron-fluid {
+    margin-top: 2%;
+    width: 100%;
+  }
+  
+
+  .yogajumbo {
+    height: 250px;
+    color:rgb(230, 227, 227);
+    background-color: rgb(102, 69, 47) !important;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    vertical-align: middle;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 0 !important;
+    margin-bottom: 50px !important;
+}
