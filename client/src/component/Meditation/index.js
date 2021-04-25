@@ -12,13 +12,30 @@ import attention from "../../assets/images/attention.webp";
 import sleep from "../../assets/images/sleep.jpeg";
 import bloodpressure from "../../assets/images/bloodpressure.jpeg";
 import pain from "../../assets/images/pain.jpeg";
+import Jumbotron from "react-bootstrap/Jumbotron"
+import Container from "react-bootstrap/Container"
 
 
-const useStyles = makeStyles((theme) => ({
-    button: {
-      margin: theme.spacing(1),
+
+const useStyles = makeStyles({
+    root: {
+      marginLeft: 20,
+      marginRight: 20,
     },
-  }));
+    header: {
+      paddingBottom: '60px',
+    },
+    button: {
+      background: 'linear-gradient(45deg, #FAE5DF 30%, #ed7966 90%)',
+      border: 0,
+      borderRadius: 3,
+      boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+      color: '#141850',
+      height: 48,
+      padding: '0 30px',
+      justifyContent: 'center',
+    },
+  });
 
 function MeditationFacts() {
     const history = useHistory();
@@ -30,8 +47,15 @@ function MeditationFacts() {
 
     return(
         <div>
-            <h1 className="benefits">Benefits of Meditation</h1>
-          <Grid
+        <Jumbotron fluid>
+  <Container id="cool">
+    <h1 className="benefits">Benefits of Meditation</h1>
+    <h3 className="jumbowords">
+    It is believed that mind and body are intricately connected and your mind has a direct impact on the physical health of your body. It has been observed that nowadays more and more professionals are relying on meditation to become clear on how to manage complex situations. Professionals usually have to do intensive and multi-faceted thinking to take strategic business decisions, and meditation helps them to open their mind to new possibilities and also improves the ability to see the “big-picture.” See below for more of the benefits of practicing meditation. 
+    </h3>
+  </Container>
+</Jumbotron>
+<Grid
   container
   direction="row"
   justify="center"
@@ -161,7 +185,7 @@ function MeditationFacts() {
 >
      <Button
         variant="contained"
-        color="primary"
+        color="inherit"
         className={classes.button}
         onClick={handleClick}
       >

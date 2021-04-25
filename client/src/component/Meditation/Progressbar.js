@@ -32,7 +32,7 @@ return (
     pathTransition: 'stroke-dashoffset 0.5s ease 0s',
 
     // Colors
-    pathColor: "gold",
+    pathColor: "#fcbf49",
     textColor: 'navy',
     trailColor: '#d6d6d6',
   })}/>

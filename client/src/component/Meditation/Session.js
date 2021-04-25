@@ -11,11 +11,26 @@ import Container from 'react-bootstrap/Container'
 import Background from "../../assets/images/breathe.PNG";
 
 
-const useStyles = makeStyles((theme) => ({
-  button: {
-    margin: theme.spacing(1),
+const useStyles = makeStyles({
+  root: {
+    marginLeft: 20,
+    marginRight: 20,
   },
-}));
+  header: {
+    paddingBottom: '60px',
+  },
+  button: {
+    background: 'linear-gradient(45deg, #FAE5D9 30%, #ed7966 90%)',
+    border: 0,
+    borderRadius: 3,
+    boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+    color: '#141850',
+    height: 48,
+    padding: '0 20px',
+    margin: '5px',
+    justifyContent: 'center',
+  },
+});
 
 function Session() {
   const [seconds, setSeconds] = useState(0);
