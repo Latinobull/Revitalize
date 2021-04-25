@@ -8,6 +8,7 @@ import Grid from "@material-ui/core/Grid";
 import PlaySound from "./Sounds";
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import Container from 'react-bootstrap/Container'
+import Background from "../../assets/images/breathe.PNG";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -51,14 +52,13 @@ const handleClick= (time) =>{
     >
       <Jumbotron fluid
       className="custom-jumbotron">
-  <Container
+         <div className="bg" style={{backgroundImage: `url(${Background})`}}></div>
+  <Container className="headingmed"
   justify="center">
     <h1>Breathing Session</h1>
-    <p>
+    <h3>
     To live mindfully, the breath is the key. Breathe in, breathe out release the stress and let it all out. Choose the length of time below, for your session, and select a sound to set the mood. Remember, reamin in the present, and focus on your breathing! 
-    </p>
-  </Container>
-</Jumbotron>
+    </h3>
       <ProgressBar className="progressBar"
         seconds={seconds}
         secondsValue={secondsValue}
@@ -109,7 +109,8 @@ const handleClick= (time) =>{
           20 mins
         </Button>
       </Grid>
-
+      </Container>
+      </Jumbotron>
       <Grid 
       container
       direction="column"
@@ -118,6 +119,7 @@ const handleClick= (time) =>{
       className="playsound">
       <PlaySound/>
       </Grid>
+      
     </div>
   );
 }

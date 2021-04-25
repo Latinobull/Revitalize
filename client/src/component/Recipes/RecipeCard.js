@@ -15,7 +15,7 @@ import NearMeIcon from "@material-ui/icons/NearMe";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { v4 as uuidv4 } from "uuid";
 import "./style.css";
-// import Background from "../../assets/images/recipes.PNG";
+import Background from "../../assets/images/recipes.PNG";
 
 const useStyles = makeStyles((theme) => ({
   root: {

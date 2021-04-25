@@ -175,7 +175,7 @@ h3{
    border-radius: 10px;
    color: #eee;
    font-size: 16px;
-   font-family: 'Cookie', cursive;
+   font-family: 'Baskerville';
    position: relative;
    transition: 1s;
    -webkit-tap-highlight-color: transparent;
@@ -189,14 +189,13 @@ h3{
 }
 
 .custom-jumbotron{
-   width: 50%;
    margin: auto;
    margin-top: -50px;
-   font-family: 'Cookie', cursive;
+   font-family: 'Baskerville';
 }
 @media (min-resolution: 144dpi) {
    .progressBar {
-    position: absolute;
+    position: relative;
     left: 20px; 
     top: 20px;
     }
@@ -204,9 +203,21 @@ h3{
   
   @media (min-resolution: 96dpi) {
    .progressBar {
-    position: absolute;
+    position: relative;
     left: 10px; 
     top: 10px;
     }
   }
 
+  .bg {
+   width: 100%;
+   height: 100%;
+   z-index: -10;
+   position: fixed;
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: cover;
+ }
+ .headingmed{
+   width: 70%;
+ }
