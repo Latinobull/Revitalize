@@ -2,6 +2,7 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import DatePicker from '../DatePicker/index';
+import DateSubmit from './DateSubmit'
 
 export default function JournalMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -27,6 +28,7 @@ export default function JournalMenu() {
         onClose={handleClose}
       >
         <DatePicker/>
+        <DateSubmit/>
       </Menu>
     </div>
   );
