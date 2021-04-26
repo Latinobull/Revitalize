@@ -3,12 +3,25 @@ import { useAuth } from '../Authenticate/AuthContext';
 import firebase from 'firebase/app';
 import '@firebase/storage';
 import app from '../firebase';
-import { Button, Grid, makeStyles } from '@material-ui/core';
+import {
+  Avatar,
+  Button,
+  CssBaseline,
+  Divider,
+  Grid,
+  makeStyles,
+  Typography,
+} from '@material-ui/core';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
+  root: {
+    height: '100vh',
+    backgroundColor: '#F7E6E3',
+  },
   displayImage: {
     maxHeight: 500,
     maxWidth: 500,
+    alignSelf: 'center',
   },
   button: {
     background: 'linear-gradient(45deg, #FAE5DF 30%, #ed7966 90%)',
@@ -20,7 +33,16 @@ const useStyles = makeStyles({
     padding: '0 30px',
     justifyContent: 'center',
   },
-});
+  myname: {
+    color: '#12248d',
+    marginBottom: '10px',
+    // font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  },
+  avatar: {
+    margin: theme.spacing(1),
+    backgroundColor: '#303179',
+  },
+}));
 
 export default function Profile() {
   const [error, setError] = useState('');
@@ -74,9 +96,14 @@ export default function Profile() {
   }
   const classes = useStyles();
   return (
-    <Grid>
-      <h1>{currentUser.displayName}'s Page</h1>
-      <img src={currentUser.photoURL} className={classes.displayImage} />
+    <Grid container component="main" className={classes.root}>
+      <CssBaseline />
+      <Grid item xs={false} sm={4} md={5}>
+        <Typography variant="h1">{currentUser.displayName}'s Page</Typography>
+        <img src={currentUser.photoURL} className={classes.displayImage} />
+      </Grid>
+      <Divider orientation="vertical" flexItem />
+      <Avatar className={classes.avatar}></Avatar>
       <form>
         <input type="file" onChange={onFileChange} />
         <input
