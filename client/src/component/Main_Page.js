@@ -61,7 +61,8 @@ export default function Main_Page() {
           {console.log(currentUser)}
           {currentUser.displayName ? (
             <Typography align="center" variant="h3">
-              Welcome back {userDisplay}, Choose where you want to go!
+              Welcome back {userDisplay.replace(/\"/g, '')}, Choose where you
+              want to go!
             </Typography>
           ) : (
             <div>
