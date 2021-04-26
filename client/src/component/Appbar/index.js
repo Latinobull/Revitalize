@@ -112,7 +112,7 @@ export default function Appbar() {
               </Link>
             </MenuItem>
             <MenuItem onClick={handleCloseHome}>
-              <Link href="/physical" color="inherit">
+              <Link href="/recipes" color="inherit">
                 Physical Health
               </Link>
             </MenuItem>

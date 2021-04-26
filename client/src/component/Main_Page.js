@@ -101,7 +101,7 @@ export default function Main_Page() {
               <Divider variant="middle" />
               <CardActions>
                 <Button size="large" className={classes.button}>
-                  <Link href="/physical" color="inherit">
+                  <Link href="/Journals" color="inherit">
                     Enter the Physical Health Section
                   </Link>
                 </Button>
