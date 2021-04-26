@@ -45,7 +45,6 @@ const useStyles = makeStyles(theme => ({
   myname: {
     color: '#12248d',
     marginBottom: '10px',
-    // font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   },
   avatar: {
     paddingTop: '10px',
