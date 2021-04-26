@@ -101,8 +101,8 @@ export default function Main_Page() {
               <Divider variant="middle" />
               <CardActions>
                 <Button size="large" className={classes.button}>
-                  <Link href="/Journals" color="inherit">
-                    Enter the Physical Health Section
+                  <Link href="/recipes" color="inherit">
+                    Better yourself by Learning new Recipes
                   </Link>
                 </Button>
               </CardActions>
@@ -132,8 +132,13 @@ export default function Main_Page() {
               <Divider variant="middle" />
               <CardActions>
                 <Button size="large" className={classes.button}>
-                  <Link href="/mental" color="inherit">
-                    Enter the Mental Health Section
+                  <Link href="/journals" color="inherit">
+                    Express Yourself in Writing
+                  </Link>
+                </Button>
+                <Button size="large" className={classes.button}>
+                  <Link href="/meditation" color="inherit">
+                    Benefits of Meditation
                   </Link>
                 </Button>
               </CardActions>
