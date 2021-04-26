@@ -126,9 +126,14 @@ export default function Profile() {
     <Grid container component="main" className={classes.root}>
       <CssBaseline />
       <Grid item xs={false} sm={4} md={5}>
-        <Typography variant="h1">{currentUser.displayName}'s Page</Typography>
+        {!currentUser.displayName ? (
+          <Typography variant="h2">Create a display name</Typography>
+        ) : (
+          <Typography variant="h2">{currentUser.displayName}'s Page</Typography>
+        )}
+
         {!currentUser.photoURL ? (
-          <AccountCircle className={classes.avatar} />
+          <AccountCircle className={classes.assignment} />
         ) : (
           <img src={currentUser.photoURL} className={classes.displayImage} />
         )}
