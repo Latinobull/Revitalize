@@ -33,14 +33,10 @@ function JournalCard() {
   const [feelings, setFeelings] = useState();
   const [gratitude, setGratitude] = useState();
   const [thoughts, setThoughts] = useState();
-  //const [date, setDate] = useState();
 
   const handleSubmit = () => {
     
     var date = Date();
-
-    //var dateUnformatted=new Date();
-    //date = dateUnformatted.toISOString();
 
     const journalEntries = {
       feelings,
