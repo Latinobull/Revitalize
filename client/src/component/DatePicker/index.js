@@ -26,15 +26,15 @@ export default function DatePicker() {
   const handleSubmit = () => {
     setRedirect(true);
 
-    if (this.state.redirect) {
-      return <Redirect to={this.state.redirect} />;
-    }
-    return this.setState({ redirect: "/journalsdisp" });
+    // if (this.state.redirect) {
+    //   return ;
+    // }
+    // return this.setState({ redirect: "/journalsdisp" });
 
     // add filter data for matchign date
   };
 
-  return (
+  return redirect ? <Redirect to="/journalsdisp" />:(
     <form className={classes.container} noValidate>
       <TextField
         onChange={(event) => setDate(event.target.value)}
