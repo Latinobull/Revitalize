@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useState } from "react";
+import { Redirect } from "react-router-dom";
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
+import DateSubmit from "../Journals/DateSubmit"
+
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -17,9 +20,17 @@ const useStyles = makeStyles((theme) => ({
 export default function DatePicker() {
   const classes = useStyles();
 
+  const [date, setDate] = useState('')
+
+  const handleSubmit = () => {
+    //filter data for matchign date
+    this.setState({ redirect: "/journalsdisp" });
+  };
+
   return (
     <form className={classes.container} noValidate>
       <TextField
+        onChange={event => setDate(event.target.value)}
         id="date"
         label="Entry Date"
         type="date"
@@ -29,6 +40,7 @@ export default function DatePicker() {
           shrink: true,
         }}
       />
+      <DateSubmit handleSubmit={handleSubmit}/>
     </form>
   );
 }
