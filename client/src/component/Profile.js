@@ -3,10 +3,12 @@ import { useAuth } from '../Authenticate/AuthContext';
 import firebase from 'firebase/app';
 import '@firebase/storage';
 import app from '../firebase';
+import { useHistory } from 'react-router';
 export default function Profile() {
   const [error, setError] = useState('');
   const displayNameRef = useRef();
   const { currentUser } = useAuth();
+  const history = useHistory();
   var imageURL;
   var file;
   const onFileChange = e => {
@@ -20,7 +22,8 @@ export default function Profile() {
       console.log('image:' + file);
     });
   };
-  async function handleSubmit() {
+  async function handleSubmit(e) {
+    e.preventDefault();
     try {
       setError('');
       await firebase
@@ -42,6 +45,9 @@ export default function Profile() {
               });
               console.log(imageURL);
               file = currentUser.photoURL;
+            })
+            .then(() => {
+              window.location.reload();
             });
         });
     } catch (err) {
