@@ -9,9 +9,9 @@ import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import TextField from "@material-ui/core/TextField";
 import "./style.css";
-import Wave from "../../../images/wave.jpg";
-import Bird from "../../../images/bird.jpg";
-import Tree from "../../../images/tree.jpg";
+import Wave from "../../../assets/images/wave.jpg";
+import Bird from "../../../assets/images/bird.jpg";
+import Tree from "../../../assets/images/tree.jpg";
 import SubmitButton from "../SubmitButton";
 import axios from "axios";
 import DisplayCard from "../DisplayCard/index"
