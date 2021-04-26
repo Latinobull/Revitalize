@@ -61,7 +61,8 @@ export default function Main_Page() {
           {console.log(currentUser)}
           {currentUser.displayName ? (
             <Typography align="center" variant="h3">
-              Welcome back {userDisplay}, Choose where you want to go!
+              Welcome back {userDisplay.replace(/\"/g, '')}, Choose where you
+              want to go!
             </Typography>
           ) : (
             <div>
@@ -83,7 +84,7 @@ export default function Main_Page() {
                 <CardMedia
                   component="img"
                   alt="Physical Health"
-                  height="450"
+                  height="350"
                   image={Physical}
                   title="Physical Health"
                 />
@@ -101,8 +102,8 @@ export default function Main_Page() {
               <Divider variant="middle" />
               <CardActions>
                 <Button size="large" className={classes.button}>
-                  <Link href="/physical" color="inherit">
-                    Enter the Physical Health Section
+                  <Link href="/recipes" color="inherit">
+                    Better yourself by Learning new Recipes
                   </Link>
                 </Button>
               </CardActions>
@@ -114,7 +115,7 @@ export default function Main_Page() {
                 <CardMedia
                   component="img"
                   alt="Mental Health"
-                  height="450"
+                  height="350"
                   image={Mental}
                   title="Mental Health"
                 />
@@ -132,8 +133,13 @@ export default function Main_Page() {
               <Divider variant="middle" />
               <CardActions>
                 <Button size="large" className={classes.button}>
-                  <Link href="/mental" color="inherit">
-                    Enter the Mental Health Section
+                  <Link href="/journals" color="inherit">
+                    Express Yourself in Writing
+                  </Link>
+                </Button>
+                <Button size="large" className={classes.button}>
+                  <Link href="/meditation" color="inherit">
+                    Benefits of Meditation
                   </Link>
                 </Button>
               </CardActions>
@@ -145,7 +151,7 @@ export default function Main_Page() {
                 <CardMedia
                   component="img"
                   alt="Chat"
-                  height="450"
+                  height="350"
                   image={Chat}
                   title="Chat"
                 />

@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { useAuth } from '../Authenticate/AuthContext';
-
+import Logo from '../assets/images/Main-Page-Photos/Revitalize-Logo.png';
 import {
   CssBaseline,
   Grid,
@@ -17,10 +17,10 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 const useStyle = makeStyles(theme => ({
   root: {
     height: '100vh',
-    backgroundColor: '#f5cac2',
+    backgroundColor: '#F7E6E3',
   },
   image: {
-    backgroundImage: 'url(https://source.unsplash.com/random)',
+    backgroundImage: `url(${Logo} )`,
     backgroundRepeat: 'no-repeat',
     backgroundColor: '#303179',
     backgroundSize: 'cover',

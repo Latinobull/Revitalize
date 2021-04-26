@@ -18,7 +18,7 @@ import Logo from '../assets/images/Main-Page-Photos/Revitalize-Logo.png';
 const useStyle = makeStyles(theme => ({
   root: {
     height: '100vh',
-    backgroundColor: '#f5cac2',
+    backgroundColor: '#F7E6E3',
   },
   image: {
     backgroundImage: `url(${Logo} )`,
@@ -67,7 +67,7 @@ export default function Signup() {
       setError('');
       setLoading(true);
       await Signup(emailRef.current.value, passwordRef.current.value);
-      history.push('/');
+      history.push('/profile/:uid');
     } catch (err) {
       console.log(err);
       setError('Failed to set up Account. Please Try Again');
