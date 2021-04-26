@@ -24,12 +24,12 @@ class App extends Component {
             <PrivateRoute exact path="/" component={Main_Page} />
             <Route path="/signup" component={Signup} />
             <Route path="/login" component={Login} />
-            <Route path="/recipes" component={Recipes} />
-            <Route path="/journals" component={Journals} />
-            <Route path="/meditation" component={MeditationFacts} />
-            <Route path="/chat" component={Chat} />
-            <Route path="/session" component={Session} />
-            <Route path="/Profile/:uid" component={Profile} />
+            <PrivateRoute path="/recipes" component={Recipes} />
+            <PrivateRoute path="/journals" component={Journals} />
+            <PrivateRoute path="/meditation" component={MeditationFacts} />
+            <PrivateRoute path="/chat" component={Chat} />
+            <PrivateRoute path="/session" component={Session} />
+            <PrivateRoute path="/Profile/:uid" component={Profile} />
           </Switch>
         </AuthProvider>
       </Router>
