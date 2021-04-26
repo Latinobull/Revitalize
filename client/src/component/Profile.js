@@ -3,12 +3,29 @@ import { useAuth } from '../Authenticate/AuthContext';
 import firebase from 'firebase/app';
 import '@firebase/storage';
 import app from '../firebase';
-import { useHistory } from 'react-router';
+import { Button, Grid, makeStyles } from '@material-ui/core';
+
+const useStyles = makeStyles({
+  displayImage: {
+    maxHeight: 500,
+    maxWidth: 500,
+  },
+  button: {
+    background: 'linear-gradient(45deg, #FAE5DF 30%, #ed7966 90%)',
+    border: 0,
+    borderRadius: 3,
+    boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+    color: '#141850',
+    height: 48,
+    padding: '0 30px',
+    justifyContent: 'center',
+  },
+});
+
 export default function Profile() {
   const [error, setError] = useState('');
   const displayNameRef = useRef();
   const { currentUser } = useAuth();
-  const history = useHistory();
   var imageURL;
   var file;
   const onFileChange = e => {
@@ -55,10 +72,11 @@ export default function Profile() {
       setError('Something went wrong changing your name');
     }
   }
+  const classes = useStyles();
   return (
-    <div>
+    <Grid>
       <h1>{currentUser.displayName}'s Page</h1>
-      <img src={currentUser.photoURL} />
+      <img src={currentUser.photoURL} className={classes.displayImage} />
       <form>
         <input type="file" onChange={onFileChange} />
         <input
@@ -67,13 +85,15 @@ export default function Profile() {
           placeholder="DisplayName"
           ref={displayNameRef}
         ></input>
-        <button onClick={handleSubmit}>Change Display Name</button>
+        <Button onClick={handleSubmit} size="small" className={classes.button}>
+          Change Display Name
+        </Button>
       </form>
       {/* <p>
         <strong>User ID: </strong>
         {uid}
       </p> */}
       {error && <h5>{error}</h5>}
-    </div>
+    </Grid>
   );
 }
