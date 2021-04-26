@@ -52,7 +52,9 @@ export default function Appbar() {
 
     if (currentUser && auth == true) {
       setAuth(false);
-      return Logout();
+      history.push('/login').then(() => {
+        return Logout();
+      });
     }
   };
 

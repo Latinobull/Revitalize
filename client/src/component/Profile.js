@@ -14,7 +14,7 @@ import {
   Paper,
   TextField,
 } from '@material-ui/core';
-
+import AccountCircle from '@material-ui/icons/AccountCircle';
 import AssignmentIcon from '@material-ui/icons/Assignment';
 
 const useStyles = makeStyles(theme => ({
@@ -40,6 +40,7 @@ const useStyles = makeStyles(theme => ({
     height: 48,
     padding: '0 30px',
     justifyContent: 'center',
+    marginLeft: 30,
   },
   myname: {
     color: '#12248d',
@@ -51,6 +52,7 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: '#F7E6E3',
     width: theme.spacing(17),
     height: theme.spacing(17),
+    marginLeft: 80,
   },
   assignment: {
     width: theme.spacing(14),
@@ -60,6 +62,12 @@ const useStyles = makeStyles(theme => ({
   form: {
     width: '100%', // Fix IE 11 issue.
     marginTop: theme.spacing(1),
+  },
+  divider: {
+    backgroundColor: '#ed7966',
+  },
+  input: {
+    display: 'none',
   },
 }));
 
@@ -119,16 +127,42 @@ export default function Profile() {
       <CssBaseline />
       <Grid item xs={false} sm={4} md={5}>
         <Typography variant="h1">{currentUser.displayName}'s Page</Typography>
-        <img src={currentUser.photoURL} className={classes.displayImage} />
+        {!currentUser.photoURL ? (
+          <AccountCircle className={classes.avatar} />
+        ) : (
+          <img src={currentUser.photoURL} className={classes.displayImage} />
+        )}
       </Grid>
-      <Divider orientation="vertical" flexItem />
-      <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
+      <Divider orientation="vertical" flexItem className={classes.divider} />
+      <Grid
+        item
+        xs={12}
+        sm={8}
+        md={5}
+        component={Paper}
+        elevation={6}
+        square
+        alignContent="center"
+      >
         <div className={classes.root2}>
           <Avatar className={classes.avatar}>
             <AssignmentIcon className={classes.assignment} />
           </Avatar>
           <form className={classes.form}>
-            <input type="file" onChange={onFileChange} />
+            <Button
+              variant="contained"
+              size="small"
+              className={classes.button}
+              component="label"
+            >
+              Upload Profile Photo
+              <input
+                type="file"
+                onChange={onFileChange}
+                className={classes.input}
+              />
+            </Button>
+
             <TextField
               variant="outlined"
               margin="normal"
@@ -154,6 +188,7 @@ export default function Profile() {
           {error && <h5>{error}</h5>}
         </div>
       </Grid>
+      <Divider orientation="vertical" flexItem className={classes.divider} />
     </Grid>
   );
 }
