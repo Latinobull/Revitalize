@@ -67,7 +67,7 @@ export default function Signup() {
       setError('');
       setLoading(true);
       await Signup(emailRef.current.value, passwordRef.current.value);
-      history.push('/');
+      history.push('/profile/:uid');
     } catch (err) {
       console.log(err);
       setError('Failed to set up Account. Please Try Again');
