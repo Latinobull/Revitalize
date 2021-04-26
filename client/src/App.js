@@ -7,6 +7,7 @@ import Main_Page from './component/Main_Page';
 import Login from './component/Login2.0';
 import Recipes from './component/Recipes/Recipes';
 import Journals from './component/Journals/index';
+import DisplayCard from './component/Journals/DisplayCard/index';
 import PrivateRoute from './component/PrivateRoute';
 import Appbar from './component/Appbar';
 import Chat from './component/Chat';
@@ -26,6 +27,7 @@ class App extends Component {
             <Route path="/login" component={Login} />
             <Route path="/recipes" component={Recipes} />
             <Route path="/journals" component={Journals} />
+            <Route path="/journalsdisp" component={DisplayCard} />
             <Route path="/meditation" component={MeditationFacts} />
             <Route path="/chat" component={Chat} />
             <Route path="/session" component={Session} />
