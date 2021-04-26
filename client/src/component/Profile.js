@@ -11,12 +11,20 @@ import {
   Grid,
   makeStyles,
   Typography,
+  Paper,
+  TextField,
 } from '@material-ui/core';
+
+import AssignmentIcon from '@material-ui/icons/Assignment';
 
 const useStyles = makeStyles(theme => ({
   root: {
     height: '100vh',
     backgroundColor: '#F7E6E3',
+  },
+  root2: {
+    height: '100vh',
+    backgroundColor: '#303179',
   },
   displayImage: {
     maxHeight: 500,
@@ -39,8 +47,19 @@ const useStyles = makeStyles(theme => ({
     // font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   },
   avatar: {
-    margin: theme.spacing(1),
-    backgroundColor: '#303179',
+    paddingTop: '10px',
+    backgroundColor: '#F7E6E3',
+    width: theme.spacing(17),
+    height: theme.spacing(17),
+  },
+  assignment: {
+    width: theme.spacing(14),
+    height: theme.spacing(14),
+    color: '#ed7966',
+  },
+  form: {
+    width: '100%', // Fix IE 11 issue.
+    marginTop: theme.spacing(1),
   },
 }));
 
@@ -103,24 +122,38 @@ export default function Profile() {
         <img src={currentUser.photoURL} className={classes.displayImage} />
       </Grid>
       <Divider orientation="vertical" flexItem />
-      <Avatar className={classes.avatar}></Avatar>
-      <form>
-        <input type="file" onChange={onFileChange} />
-        <input
-          type="name"
-          name="DisplayName"
-          placeholder="DisplayName"
-          ref={displayNameRef}
-        ></input>
-        <Button onClick={handleSubmit} size="small" className={classes.button}>
-          Change Display Name
-        </Button>
-      </form>
-      {/* <p>
+      <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
+        <div className={classes.root2}>
+          <Avatar className={classes.avatar}>
+            <AssignmentIcon className={classes.assignment} />
+          </Avatar>
+          <form className={classes.form}>
+            <input type="file" onChange={onFileChange} />
+            <TextField
+              variant="outlined"
+              margin="normal"
+              fullWidth
+              label="Display Name"
+              type="name"
+              name="DisplayName"
+              placeholder="DisplayName"
+              inputRef={displayNameRef}
+            ></TextField>
+            <Button
+              onClick={handleSubmit}
+              size="small"
+              className={classes.button}
+            >
+              Change Display Name
+            </Button>
+          </form>
+          {/* <p>
         <strong>User ID: </strong>
         {uid}
       </p> */}
-      {error && <h5>{error}</h5>}
+          {error && <h5>{error}</h5>}
+        </div>
+      </Grid>
     </Grid>
   );
 }
