@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
-import { makeStyles } from '@material-ui/core/styles';
-import TextField from '@material-ui/core/TextField';
-import DateSubmit from "../Journals/DateSubmit"
-
+import { makeStyles } from "@material-ui/core/styles";
+import TextField from "@material-ui/core/TextField";
+import DateSubmit from "../Journals/DateSubmit";
 
 const useStyles = makeStyles((theme) => ({
   container: {
-    display: 'flex',
-    flexWrap: 'wrap',
+    display: "flex",
+    flexWrap: "wrap",
   },
   textField: {
     marginLeft: theme.spacing(1),
@@ -20,17 +19,25 @@ const useStyles = makeStyles((theme) => ({
 export default function DatePicker() {
   const classes = useStyles();
 
-  const [date, setDate] = useState('')
+  const [date, setDate] = useState("");
+
+  const [redirect, setRedirect] = useState(false);
 
   const handleSubmit = () => {
-    //filter data for matchign date
-    this.setState({ redirect: "/journalsdisp" });
+    setRedirect(true);
+
+    if (this.state.redirect) {
+      return <Redirect to={this.state.redirect} />;
+    }
+    return this.setState({ redirect: "/journalsdisp" });
+
+    // add filter data for matchign date
   };
 
   return (
     <form className={classes.container} noValidate>
       <TextField
-        onChange={event => setDate(event.target.value)}
+        onChange={(event) => setDate(event.target.value)}
         id="date"
         label="Entry Date"
         type="date"
@@ -40,7 +47,7 @@ export default function DatePicker() {
           shrink: true,
         }}
       />
-      <DateSubmit handleSubmit={handleSubmit}/>
+      <DateSubmit handleSubmit={handleSubmit} />
     </form>
   );
 }
