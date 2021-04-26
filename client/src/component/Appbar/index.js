@@ -115,12 +115,17 @@ export default function Appbar() {
             </MenuItem>
             <MenuItem onClick={handleCloseHome}>
               <Link href="/recipes" color="inherit">
-                Physical Health
+                Recipes
               </Link>
             </MenuItem>
             <MenuItem onClick={handleCloseHome}>
-              <Link href="/mental" color="inherit">
-                Mental Health
+              <Link href="/journals" color="inherit">
+                Journals
+              </Link>
+            </MenuItem>
+            <MenuItem onClick={handleCloseHome}>
+              <Link href="/meditation" color="inherit">
+                Meditation
               </Link>
             </MenuItem>
           </Menu>

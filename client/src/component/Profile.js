@@ -139,16 +139,7 @@ export default function Profile() {
         )}
       </Grid>
       <Divider orientation="vertical" flexItem className={classes.divider} />
-      <Grid
-        item
-        xs={12}
-        sm={8}
-        md={5}
-        component={Paper}
-        elevation={6}
-        square
-        alignContent="center"
-      >
+      <Grid item xs={12} sm={8} md={4} component={Paper} elevation={6} square>
         <div className={classes.root2}>
           <Avatar className={classes.avatar}>
             <AssignmentIcon className={classes.assignment} />
