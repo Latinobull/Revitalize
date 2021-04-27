@@ -17,7 +17,7 @@ export default function dateSubmit(props) {
   return (
     <div className={classes.root}>
       <Button onClick={()=>props.handleSubmit()} id="submitB" variant="contained" color="primary">
-        Select Date
+        Reflect on your progress
       </Button>
     </div>
   );

@@ -14,7 +14,6 @@ import Bird from "../../../assets/images/bird.jpg";
 import Tree from "../../../assets/images/tree.jpg";
 import SubmitButton from "../SubmitButton";
 import axios from "axios";
-import DisplayCard from "../DisplayCard/index"
 const mongoose = require("mongoose");
 const db = mongoose.connection;
 
@@ -35,7 +34,6 @@ function JournalCard() {
   const [thoughts, setThoughts] = useState();
 
   const handleSubmit = () => {
-    
     var date = Date();
 
     const journalEntries = {
@@ -46,12 +44,16 @@ function JournalCard() {
     };
     console.log(journalEntries);
 
- axios.post("api/journals", {
-  feelings,
-  gratitude,
-  thoughts,
-  date,
-})
+    axios.post("api/journals", {
+      feelings,
+      gratitude,
+      thoughts,
+      date,
+    });
+
+    setFeelings("")
+    setGratitude("")
+    setThoughts("")
   };
 
   return (
@@ -147,7 +149,6 @@ function JournalCard() {
           </CardActions>
         </Card>
         <SubmitButton handleSubmit={handleSubmit} />
-        <DisplayCard/>
       </div>
     </div>
   );
