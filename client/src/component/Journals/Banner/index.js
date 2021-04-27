@@ -3,7 +3,7 @@ import API from "../../../api/zenQuotes";
 import "./style.css";
 
 
-function Quote() {
+function Quote(props) {
   const [data, setData] = useState();
 
   useEffect(() => {
@@ -18,8 +18,8 @@ function Quote() {
   return (
     data ?
     <div>
-      <h3 class="cursive">"{data[0].q}"</h3>
-      <p>-{data[0].a}</p>
+      <h3 class="cursive">"{data[props.count].q}"</h3>
+      <p>-{data[props.count].a}</p>
     </div>:null
   );
 }
