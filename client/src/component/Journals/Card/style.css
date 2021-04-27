@@ -1,22 +1,19 @@
 #cardOne {
-    float: left;
-    padding-left: 60px;
-    padding-right: 50px;
-    width: 400px;
-  }
+  float: left;
+  padding-left: 60px;
+  padding-right: 50px;
+  width: 430px;
+}
 
-  #cardTwo {
-    float: left;
-    padding-right: 50px;
-    width: 400px;
-  }
+#cardTwo {
+  float: left;
+  padding-right: 50px;
+  width: 400px;
+}
 
-  #cardTwo {
-    float: left;
-    padding-right: 50px;
-    width: 400px;
-  }
 
-  #feelings, #gratitude, #thoughts {
-    width: 250px;
-  }
+#feelings,
+#gratitude,
+#thoughts {
+  width: 250px;
+}

@@ -56,6 +56,12 @@ function JournalCard() {
     setThoughts("")
   };
 
+  const clearFunction = () => {
+    setFeelings("")
+    setGratitude("")
+    setThoughts("")
+  }
+
   return (
     <div>
       <div id="cardOne">
@@ -82,7 +88,7 @@ function JournalCard() {
             </CardContent>
           </CardActionArea>
           <CardActions>
-            <Button size="small" color="primary">
+            <Button size="small" color="primary" onClick={clearFunction}>
               Clean Slate
             </Button>
           </CardActions>
@@ -112,7 +118,7 @@ function JournalCard() {
             </CardContent>
           </CardActionArea>
           <CardActions>
-            <Button size="small" color="primary">
+            <Button size="small" color="primary" onClick={clearFunction}>
               Clean Slate
             </Button>
           </CardActions>
@@ -143,7 +149,7 @@ function JournalCard() {
             </CardContent>
           </CardActionArea>
           <CardActions>
-            <Button size="small" color="primary">
+            <Button size="small" color="primary" onClick={clearFunction}>
               Clean Slate
             </Button>
           </CardActions>
