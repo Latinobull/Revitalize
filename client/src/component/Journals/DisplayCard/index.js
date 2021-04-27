@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import 'bootstrap/dist/css/bootstrap.min.css';
 import Carousel from 'react-bootstrap/Carousel';
 
 export default function displayJournal() {
@@ -59,13 +58,13 @@ export default function displayJournal() {
               </Carousel.Caption>
             </Carousel.Item>
           </Carousel>
-          {data.map((data) => (
+          {/* {data.map((data) => (
             <div>
               <h6>Feelings: {data.feelings}</h6>
               <h6>Gratitude: {data.gratitude}</h6>
               <h6>Thoughts: {data.thoughts}</h6>
             </div>
-          ))}
+          ))} */}
         </>
       ) : (
         <p>loading...</p>

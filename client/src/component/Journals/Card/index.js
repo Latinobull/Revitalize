@@ -14,7 +14,6 @@ import Bird from "../../../assets/images/bird.jpg";
 import Tree from "../../../assets/images/tree.jpg";
 import SubmitButton from "../SubmitButton";
 import axios from "axios";
-import DisplayCard from "../DisplayCard/index";
 const mongoose = require("mongoose");
 const db = mongoose.connection;
 
