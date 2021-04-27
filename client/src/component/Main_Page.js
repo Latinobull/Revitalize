@@ -17,6 +17,8 @@ import {
 import Physical from '../assets/images/Main-Page-Photos/Physical.jpg';
 import Mental from '../assets/images/Main-Page-Photos/Mental.jpg';
 import Chat from '../assets/images/Main-Page-Photos/Chat.png';
+import Background from '../assets/images/recipes.PNG';
+
 const useStyles = makeStyles({
   root: {
     marginLeft: 20,
@@ -56,6 +58,10 @@ export default function Main_Page() {
   const classes = useStyles();
   return (
     <div>
+      <div
+        className="bg"
+        style={{ backgroundImage: `url(${Background})` }}
+      ></div>
       <Grid container>
         <Grid item xs={12} className={classes.header}>
           {console.log(currentUser)}

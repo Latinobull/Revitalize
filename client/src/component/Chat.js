@@ -19,6 +19,7 @@ import {
 } from '@material-ui/core';
 import SendIcon from '@material-ui/icons/Send';
 import AccountCircle from '@material-ui/icons/AccountCircle';
+import Background from '../assets/images/recipes.PNG';
 export default function Chat() {
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState('');
@@ -90,12 +91,14 @@ export default function Chat() {
     divRef.current.scrollIntoView({ behavior: 'smooth' });
   });
   return (
-    <div>
+    <div className="bg" style={{ backgroundImage: `url(${Background})` }}>
       <Grid container>
         <Grid item xs={12}>
-          <Typography variant="h5" className="header-message" align="center">
-            Revitalize Chat
-          </Typography>
+          <Typography
+            variant="h3"
+            className="header-message"
+            align="center"
+          ></Typography>
         </Grid>
       </Grid>
       <Grid container className={classes.chatSection}>
