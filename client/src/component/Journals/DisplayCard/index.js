@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Wave from "../../../assets/images/wave.jpg";
-import Bird from "../../../assets/images/bird.jpg";
-import Treetwo from "../../../assets/images/treetwo.png";
 import "./style.css";
 
 export default function displayJournal() {

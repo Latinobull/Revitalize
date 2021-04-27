@@ -82,7 +82,7 @@ function JournalCard() {
             </CardContent>
           </CardActionArea>
           <CardActions>
-            <Button size="small" color="primary">
+            <Button onClick={setFeelings()} size="small" color="primary">
               Clean Slate
             </Button>
           </CardActions>
