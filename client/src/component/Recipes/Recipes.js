@@ -7,6 +7,7 @@ import { Grid } from "@material-ui/core";
 import "./style.css";
 
 
+
 function Recipes() {
   const [query, setQuery] = useState("");
   const [recipes, setRecipes] = useState([]);
@@ -20,9 +21,6 @@ function Recipes() {
     });
   };
 
-  const handleSave = (recipeInfo) => {
-    axios.post("api/recipes", recipeInfo) 
-    };
 
   const handleTyping = function handleTyping(e) {
     setQuery(e.target.value);
@@ -39,7 +37,7 @@ function Recipes() {
 >
       {recipes.map((recipe) => {
         console.log(recipe);
-        return <RecipeReviewCard onClick={handleSave} recipe={recipe} key={uuidv4()} />;
+        return <RecipeReviewCard recipe={recipe} key={uuidv4()} />;
       })}
       </Grid>
     </div>

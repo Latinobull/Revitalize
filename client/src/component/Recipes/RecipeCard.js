@@ -48,7 +48,8 @@ export default function RecipeReviewCard({ recipe, handleSave }) {
   };
 
  
-  const kalories = Math.round(recipe.recipe.calories) + "" + "Calories"
+  const kalories = Math.round(recipe.recipe.calories) + " " + "Calories"
+  console.log(handleSave)
   return (
     <div>
     <Card className={classes.root}>
