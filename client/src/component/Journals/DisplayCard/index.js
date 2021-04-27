@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Carousel from 'react-bootstrap/Carousel';
+import Wave from "../../../assets/images/wave.jpg";
+import Bird from "../../../assets/images/bird.jpg";
+import Treetwo from "../../../assets/images/treetwo.png";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function displayJournal() {
   const [data, setData] = useState([]);
@@ -20,51 +24,49 @@ export default function displayJournal() {
             <Carousel.Item>
               <img
                 className="d-block w-100"
-                src="holder.js/800x400?text=First slide&bg=373940"
+                src={Wave}
                 alt="First slide"
               />
               <Carousel.Caption>
-                <h3>First slide label</h3>
+                <h1>Feelings:</h1>
                 <p>
-                  Nulla vitae elit libero, a pharetra augue mollis interdum.
+                  {data.map((data) => (
+              <h6>{data.feelings}</h6>
+          ))}
                 </p>
               </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
               <img
                 className="d-block w-100"
-                src="holder.js/800x400?text=Second slide&bg=282c34"
+                src={Bird}
                 alt="Second slide"
               />
 
               <Carousel.Caption>
-                <h3>Second slide label</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <h1>Gratitude:</h1>
+                <p>{data.map((data) => (
+              <h6>{data.gratitude}</h6>
+          ))}</p>
               </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
               <img
                 className="d-block w-100"
-                src="holder.js/800x400?text=Third slide&bg=20232a"
+                src={Treetwo}
                 alt="Third slide"
               />
 
               <Carousel.Caption>
-                <h3>Third slide label</h3>
+                <h1>Thoughts:</h1>
                 <p>
-                  Praesent commodo cursus magna, vel scelerisque nisl
-                  consectetur.
+                {data.map((data) => (
+              <h6>{data.thoughts}</h6>
+          ))}
                 </p>
               </Carousel.Caption>
             </Carousel.Item>
           </Carousel>
-          {/* {data.map((data) => (
-            <div>
-              <h6>Feelings: {data.feelings}</h6>
-              <h6>Gratitude: {data.gratitude}</h6>
-              <h6>Thoughts: {data.thoughts}</h6>
-            </div>
-          ))} */}
         </>
       ) : (
         <p>loading...</p>
