@@ -124,17 +124,6 @@ html, body {
     max-width: 380px;
  }
 
-.benefits{
-    text-align: center;
-}
- #post-img1{
-     background-image: url("../../assets/images/stress.jpeg");
- }
- #post-img2{
-    background-image: url("../../assets/images/anxiety.jpeg");
-    background-size: 130%;
-}
-
 .practice{
    display: block;
    border-radius: 100px;
@@ -185,7 +174,7 @@ h3{
    cursor: pointer;
    padding-top: 5px;
    margin-top: 10px;
-   margin-right: 10px;
+   margin-right:50px;
 }
 
 .custom-jumbotron{
@@ -218,6 +207,13 @@ h3{
    background-position: center;
    background-size: cover;
  }
- .headingmed{
+ #cool{
    width: 70%;
  }
+
+ .jumbowords{
+    font-size: 18px;
+    font-weight: 300;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+ }
+

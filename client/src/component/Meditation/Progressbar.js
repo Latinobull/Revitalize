@@ -2,7 +2,6 @@ import React from "react";
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import "./style.css";
-import Background from "../../assets/images/breathe.PNG";
 
 
 
@@ -32,7 +31,7 @@ return (
     pathTransition: 'stroke-dashoffset 0.5s ease 0s',
 
     // Colors
-    pathColor: "gold",
+    pathColor: "#fcbf49",
     textColor: 'navy',
     trailColor: '#d6d6d6',
   })}/>
