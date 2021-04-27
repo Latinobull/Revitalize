@@ -12,7 +12,7 @@ function Header(){
             <div className="bg" style={{backgroundImage: `url(${Background})`}}></div>
         <Container classname="foodie">
           <h1>Healthy and Nutritious Food Recipes</h1>
-          <p>
+          <p className="heading">
           When you eat healthy you are guaranteed to feel a lot better about yourself. Although eating healthy is not always on everyone’s mind eating healthy foods should always be a must in everyone’s diet. Use the search bar below to search for fun and easy recipes guranteed to make you feel good about yourself!
           </p>
         </Container>
