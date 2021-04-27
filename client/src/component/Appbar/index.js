@@ -52,6 +52,7 @@ export default function Appbar() {
 
     if (currentUser && auth == true) {
       setAuth(false);
+
       return Logout();
     }
   };
@@ -112,13 +113,18 @@ export default function Appbar() {
               </Link>
             </MenuItem>
             <MenuItem onClick={handleCloseHome}>
-              <Link href="/physical" color="inherit">
-                Physical Health
+              <Link href="/recipes" color="inherit">
+                Recipes
               </Link>
             </MenuItem>
             <MenuItem onClick={handleCloseHome}>
-              <Link href="/mental" color="inherit">
-                Mental Health
+              <Link href="/journals" color="inherit">
+                Journals
+              </Link>
+            </MenuItem>
+            <MenuItem onClick={handleCloseHome}>
+              <Link href="/meditation" color="inherit">
+                Meditation
               </Link>
             </MenuItem>
           </Menu>

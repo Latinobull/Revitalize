@@ -35,10 +35,14 @@ function JournalCard() {
   const [thoughts, setThoughts] = useState();
 
   const handleSubmit = () => {
+    
+    var date = Date();
+
     const journalEntries = {
       feelings,
       gratitude,
       thoughts,
+      date,
     };
     console.log(journalEntries);
 
@@ -46,6 +50,7 @@ function JournalCard() {
   feelings,
   gratitude,
   thoughts,
+  date,
 })
   };
 
