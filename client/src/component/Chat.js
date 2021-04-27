@@ -18,6 +18,7 @@ import {
   Typography,
 } from '@material-ui/core';
 import SendIcon from '@material-ui/icons/Send';
+import AccountCircle from '@material-ui/icons/AccountCircle';
 export default function Chat() {
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState('');
@@ -108,6 +109,32 @@ export default function Chat() {
             </ListItem>
           </List>
           <Divider />
+          <List>
+            <ListItem button key="RemySharp">
+              <ListItemIcon>
+                <Avatar>
+                  <AccountCircle />
+                </Avatar>
+              </ListItemIcon>
+              <ListItemText>Esiena</ListItemText>
+            </ListItem>
+            <ListItem button key="RemySharp">
+              <ListItemIcon>
+                <Avatar>
+                  <AccountCircle />
+                </Avatar>
+              </ListItemIcon>
+              <ListItemText>Alex</ListItemText>
+            </ListItem>
+            <ListItem button key="RemySharp">
+              <ListItemIcon>
+                <Avatar>
+                  <AccountCircle />
+                </Avatar>
+              </ListItemIcon>
+              <ListItemText>Adia</ListItemText>
+            </ListItem>
+          </List>
         </Grid>
         <Grid item xs={9}>
           <List className={classes.messageArea}>
